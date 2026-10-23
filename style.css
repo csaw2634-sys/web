@@ -1,0 +1,1454 @@
+body {
+    background-color: #0f172a;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 30px;
+}
+
+/* 1. 상단 네비게이션: 팀 네임 바로 옆 배치 및 8개 목차 스타일 */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.team-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+.top-nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.top-nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.top-nav a:hover, .top-nav a.active {
+    color: #38bdf8;
+    font-weight: bold;
+}
+
+.nav-range-indicator {
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+/* 3. 슬라이더 영역 (화면에 4개 노출) */
+.slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.card-container {
+    overflow: hidden;
+    width: 100%;
+    padding: 5px 0;
+}
+
+.card-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.35s ease-in-out, opacity 0.25s ease;
+}
+
+.arrow-btn {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+    border: 1px solid #334155;
+    font-size: 1.2rem;
+    padding: 15px 12px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.arrow-btn:hover {
+    background-color: rgba(56, 189, 248, 0.2);
+    border-color: #38bdf8;
+}
+
+/* 4. 카드 크기: 기존 대비 세로 길이 2배 증가 적용 (높이 240px) */
+.card {
+    flex: 0 0 calc(25% - 15px); /* 한 화면에 정확히 4개 배치 */
+    height: 240px; 
+    background-color: #1e293b;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    cursor: pointer;
+    border: 1px solid #64748b;     /* 카드 테두리: 배경보다 밝게 해서 카드끼리 겹칠 때 경계가 보이게 */
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.card:hover {
+    border-color: #38bdf8;
+    transform: translateY(-3px);
+}
+
+.card.active {
+    border-color: #38bdf8;
+    background-color: #1e293b;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+/* 4. 카드 내부 이미지 커스텀 스타일 */
+.card-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: #334155;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* 2, 3. 컨텐츠 박스 디자인 */
+.detail-box {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #38bdf8;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 10px;
+}
+
+.detail-header button {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.detail-header button:hover {
+    color: #ffffff;
+}
+.detail-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* 내부 그래프 영역과 텍스트 영역을 일괄 관리 */
+.detail-content .chart-area {
+    flex: 1;
+}
+
+.detail-content .chart-area img {
+    width: 100%;
+    height: auto;
+}
+
+.detail-content .text-area {
+    flex: 1;
+}
+
+.smry {
+    cursor: pointer;
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+.smry:hover {
+    color: #cbd5e1;
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.detail-box.closing {
+    animation: fadeOut 0.3s ease-in-out forwards;
+}
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(10px); }
+}
+.detail-box.slide-left  { animation: slideFromRight 0.35s ease-out; }
+.detail-box.slide-right { animation: slideFromLeft 0.35s ease-out; }
+
+@keyframes slideFromRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideFromLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ===== 레이아웃 전환 ===== */
+
+.main-container { display: flex; align-items: flex-start; gap: 24px; }
+.slider-wrapper { flex: 0 0 100%; min-width: 0; }
+.detail-box     { flex: 1; min-width: 0; }
+
+/* 1단계: 카드 모으기
+   --s = 줄어드는 비율. 크기를 "사이드바 값 ÷ 비율"로 미리 키워 두면,
+   줄어든 뒤에 정확히 사이드바 값이 됨 */
+.main-container.gathering .card {
+    transition: transform 0.9s cubic-bezier(.59,.04,.43,.89),
+                height    0.9s cubic-bezier(.59,.04,.43,.89),
+                padding   0.9s cubic-bezier(.59,.04,.43,.89),
+                opacity   0.2s;
+    transform-origin: left top;
+    height: calc(52px / var(--s)); 
+    flex-direction: row;                       /* 아이콘 왼쪽 + 제목 오른쪽 (사이드바와 같은 배치) */
+    justify-content: flex-start;
+    gap: calc(15px / var(--s));
+    padding: 0 calc(14px / var(--s));
+    overflow: hidden;
+    border-width: calc(1px / var(--s));        /* 줄어든 뒤에도 테두리가 1px로 또렷하게 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+}
+.main-container.gathering .card-img {
+    width:  calc(28px / var(--s));             /* 줄어든 뒤 28px = 사이드바 아이콘 크기 */
+    height: calc(28px / var(--s));
+    transition: width 0.9s cubic-bezier(.59,.04,.43,.89),
+                height 0.9s cubic-bezier(.59,.04,.43,.89);
+}
+.main-container.gathering .card-title {
+    font-size: calc(0.9rem / var(--s));        /* 줄어든 뒤 0.9rem = 사이드바 글자 크기 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.main-container.gathering .arrow-btn {
+    visibility: hidden;
+    padding: 0;
+    font-size: 0;
+    border-width: 0;
+    transition: padding 0.9s cubic-bezier(.59,.04,.43,.89),
+                font-size 0.9s cubic-bezier(.59,.04,.43,.89),
+                border-width 0.9s cubic-bezier(.59,.04,.43,.89);
+}
+
+/* 2단계: 왼쪽 세로 목록 */
+.main-container.opened .slider-wrapper { flex-basis: 240px; }
+.main-container.opened .arrow-btn      { display: none; }
+.main-container.opened .card-track {
+    flex-direction: column;
+    gap: 8px;
+    transform: none !important;
+}
+.main-container.opened .card {
+    flex: 0 0 auto;
+    height: 52px;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;   /* 크기 변화는 애니메이션 안 함 */
+    animation: unfold 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    z-index: calc(50 - var(--i));
+}
+.main-container.opened .card-img   { width: 28px; height: 28px; }
+.main-container.opened .card-title {
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 뭉치 자리(맨 위)에서 각자 자리로 펼쳐지기 */
+@keyframes unfold {
+    from { transform: translateY(calc(var(--i) * -60px)); }
+    to   { transform: none; }
+}
+
+.main-container.opened .card.clone { display: none; }
+/* ===== 웹툰·드라마 포스터 띠 ===== */
+.poster-strip {
+    overflow: hidden;              /* 화면 밖으로 나간 카드는 안 보이게 */
+    margin-top: 10px;
+    container-type: inline-size;   /* 안쪽에서 "띠 너비"를 기준으로 크기를 잴 수 있게 */
+    cursor: none;                  /* 포스터 띠 위에서는 마우스 화살표를 숨겨요 (동그라미만 보이게) */
+    max-height: 600px;             /* 접힐 때 줄어들 수 있게 넉넉한 최대 높이를 정해 둠 */
+    transition: opacity 0.4s ease, max-height 0.5s ease, margin-top 0.5s ease;
+}
+
+/* 목차를 누르면(카드가 모이기 시작할 때부터) 포스터 띠가 흐려지며 접혀서 사라짐
+   ~ 는 "같은 부모 안에서 뒤에 오는 형제"라는 뜻: main 다음에 오는 포스터 띠를 가리킴 */
+.main-container.gathering ~ .poster-strip,
+.main-container.opened ~ .poster-strip {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    pointer-events: none;          /* 안 보이는 동안 마우스가 닿아도 반응 안 하게 */
+}
+.poster-track {
+    display: flex;
+    gap: 24px;
+    width: max-content;            /* 기차 길이 = 카드 10장 길이 */
+    padding-right: 24px;           /* 마지막 카드 뒤에도 빈칸 1개 → 앞 5장과 뒤 5장 길이가 딱 같아짐 */
+    animation: posterFlow 40s linear infinite;
+}
+@keyframes posterFlow {
+    from { transform: translateX(-50%); }   /* 뒤쪽 5장(쌍둥이)이 보이는 자리에서 출발해서 */
+    to   { transform: translateX(0); }      /* 오른쪽으로 흘러 앞쪽 5장 자리에 도착 → 처음과 똑같은 모습이라 이어짐 */
+}
+.poster-pair {
+    flex: 0 0 calc((100cqw - 96px) / 5);  /* 한 화면에 5장: (띠 너비 - 빈칸 4개) ÷ 5 */
+    margin: 0;
+}
+.poster-pair figcaption {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    text-align: center;
+}
+
+/* ===== 포스터 띠를 은은한 배경처럼 ===== */
+/* 양쪽 끝이 배경 속으로 서서히 사라지게 (가운데는 또렷, 끝 8%는 점점 투명) */
+.poster-strip {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+            mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+/* 평소에는 살짝 어둡고 흐리게 → 눈이 위 목차로 먼저 가요 */
+.poster-pair .c2s {
+    filter: brightness(0.6) saturate(0.8);
+    transition: filter 0.3s ease;
+}
+.poster-pair figcaption {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+/* 마우스를 올린 쌍만 원래 밝기로 */
+.poster-pair:hover .c2s       { filter: none; }
+.poster-pair:hover figcaption { opacity: 1; }
+/* 포스터 띠에서는 웹툰·포스터를 칸에 꽉 채워요 (넘치는 가장자리만 화면에서 살짝 가림, 원본 파일은 그대로) */
+.poster-pair .c2s img { object-fit: cover; }
+
+/* ===== 홈 화면 ===== */
+.team-name { cursor: pointer; }      /* 팀 이름을 누를 수 있다는 표시 */
+
+/* 제목 영역: 카드 화면에서는 카드 위에 작게 */
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 0;
+    padding: 20px 0 40px;
+    transition: min-height 0.7s cubic-bezier(0.65, 0, 0.35, 1),
+                padding    0.7s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.home h1 {
+    font-family: 'Anton', 'Impact', sans-serif;   /* 아주 굵은 영문 글꼴 */
+    font-size: 3.2rem;
+    font-style: italic;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0 0 14px;
+    transition: font-size 0.7s cubic-bezier(0.65, 0, 0.35, 1);   /* 크게 → 작게 스르륵 */
+}
+.home p {
+    color: #94a3b8;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    margin: 0;
+}
+
+/* 홈 화면일 때(body에 home-mode): 제목이 화면 가운데에 아주 크게, 카드와 포스터 띠는 숨김 */
+body.home-mode .home {
+    min-height: calc(100vh - 160px);   /* 헤더를 뺀 나머지 화면 높이 */
+    padding: 0;
+    cursor: pointer;                   /* 누르면 카드 화면으로 */
+    animation: fadeIn 0.8s ease;
+}
+/* 홈 화면 제목: 아주 크고 굵은 글자 속에서만 웹툰·포스터 띠가 흘러가요
+   (글자 모양대로 그림을 오려 내는 background-clip: text) */
+body.home-mode .home h1 {
+    font-size: clamp(6rem, 17vw, 18rem);      /* 화면 너비의 17%까지 아주 크게 */
+    font-style: italic;
+    letter-spacing: 0.01em;
+    background-image: url('./pjfile/home_strip.jpg');
+    background-repeat: repeat-x;              /* 띠를 옆으로 끝없이 이어 붙임 */
+    background-size: auto 100%;               /* 띠 높이 = 글자 높이 */
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;                       /* 글자 색을 비워야 안쪽 그림이 보여요 */
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.35);   /* 글자 테두리를 살짝 그려서 모양이 또렷하게 */
+}
+body.home-mode .home p { display: none; }     /* 홈 화면에서는 부제 없이 제목만 */
+body.home-mode .main-container,
+body.home-mode .poster-strip { display: none; }
+
+/* 목차를 열어 사이드바 화면일 때는 제목을 치워서 위로 붙임 */
+body:has(.main-container.gathering) .home,
+body:has(.main-container.opened) .home { display: none; }
+
+/* 카드 화면이 나타날 때 스르륵 */
+body:not(.home-mode) .main-container,
+body:not(.home-mode) .poster-strip { animation: fadeIn 0.6s ease; }
+
+/* 홈 화면에서는 "목차 ○ ~ ○ 표시 중"도 숨김 (카드가 안 보이니까) */
+body.home-mode .nav-range-indicator { visibility: hidden; }
+
+
+/* =========================================================
+   컷 → 씬 그림 (다시 쓸 수 있는 부품)
+   - 웹툰 그림(컷) 위에 드라마 포스터(씬)를 겹쳐 두고, 포스터는 평소에 가려 둬요.
+   - 마우스를 올리면 마우스 주변 동그라미만큼만 포스터가 보여요. (돋보기처럼)
+   - JS가 is-scene 이름표를 붙이면 포스터 전체가 보여요. (자동으로 바꿀 때)
+   - 다른 곳에서 쓰려면 makeCutToScene()으로 만든 HTML을 넣기만 하면 돼요.
+   - 동그라미 크기는 --c2s-size, 칸 모양은 --c2s-ratio(가로÷세로)로 조절해요.
+   ========================================================= */
+
+/* 동그라미 크기를 부드럽게 키우고 줄이려면 "이건 길이야"라고 브라우저에게 미리 알려 줘야 해요 */
+@property --c2s-r {
+    syntax: '<length-percentage>';
+    inherits: true;
+    initial-value: 0px;
+}
+
+.c2s {
+    --c2s-r: 0px;                          /* 지금 동그라미 크기 (평소엔 0 = 안 보임) */
+    position: relative;
+    width: 100%;
+    aspect-ratio: var(--c2s-ratio, 0.7);   /* 기본은 포스터 비율(세로로 긴 칸) */
+    border-radius: 8px;
+    overflow: hidden;
+    background: #0b1220;                  /* 사진이 칸보다 작을 때 보이는 바탕 */
+    transition: --c2s-r 0.25s ease;       /* 동그라미가 스르륵 커지고 작아지게 */
+}
+.c2s img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;                  /* 사진은 자르지 않고 칸 안에 통째로 */
+    display: block;
+}
+/* 씬(포스터): 마우스 위치(--mx, --my)를 중심으로 한 동그라미 안만 보여요. 가장자리는 부드럽게 번짐 */
+.c2s-scene {
+    -webkit-mask-image: radial-gradient(circle at var(--mx, 50%) var(--my, 50%),
+                        #000 0, #000 calc(var(--c2s-r) * 0.6), transparent var(--c2s-r));
+            mask-image: radial-gradient(circle at var(--mx, 50%) var(--my, 50%),
+                        #000 0, #000 calc(var(--c2s-r) * 0.6), transparent var(--c2s-r));
+}
+.c2s:hover    { --c2s-r: var(--c2s-size, 230px); }   /* 마우스를 올리면 동그라미가 생김 */
+.c2s.is-scene { --c2s-r: 150%; }                     /* 이름표가 붙으면 포스터 전체가 보임 */
+
+
+/* ===== 팀 소개: 넷플릭스 프로필 선택형 (기존 페이지 스타일과 분리) ===== */
+.profile-select { box-sizing:border-box; width:100%; min-height:520px; padding:55px 20px 45px; text-align:center; color:#fff; }
+.profile-select-kicker { margin:0 0 13px; color:#94a3b8; font-size:11px; font-weight:700; letter-spacing:3px; }
+.profile-select-title { margin:0; font-size:clamp(25px,3vw,42px); font-weight:600; letter-spacing:-1px; }
+.profile-select-subtitle { margin:12px 0 42px; font-size:14px; color:#94a3b8; }
+.profile-select-grid { display:grid; grid-template-columns:repeat(4,minmax(0,170px)); justify-content:center; align-items:start; gap:clamp(14px,2.3vw,30px); }
+.profile-person { min-width:0; --profile-color:#64748b; }
+.profile-red { --profile-color:#16a7bf; } .profile-yellow { --profile-color:#38B89A; }
+.profile-cyan { --profile-color:#A78BDA; } .profile-gray { --profile-color:#E47BA9; }
+.profile-person summary { display:block; list-style:none; cursor:pointer; outline-offset:5px; }
+.profile-person summary::-webkit-details-marker { display:none; }
+.profile-picture { position:relative; display:flex; align-items:center; justify-content:center; width:100%; aspect-ratio:1/1; overflow:hidden; box-sizing:border-box; border:3px solid transparent; border-radius:7px; background:var(--profile-color); transition:border-color .2s,transform .2s,box-shadow .2s; }
+.profile-picture::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,#ffffff22,transparent 55%,#00000035); }
+.profile-initial { font-size:clamp(45px,6vw,85px); font-weight:800; color:#ffffffd9; line-height:1; }
+.profile-picture img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.profile-name { display:block; margin-top:12px; font-size:17px; color:#94a3b8; transition:color .2s; }
+.profile-person summary:hover .profile-picture,.profile-person summary:focus-visible .profile-picture,.profile-person[open] .profile-picture { border-color:#fff; transform:translateY(-3px); box-shadow:0 9px 25px #0005; }
+.profile-person summary:hover .profile-name,.profile-person summary:focus-visible .profile-name,.profile-person[open] .profile-name { color:#fff; }
+.profile-person-detail { display:flex; flex-direction:column; gap:5px; margin-top:12px; padding:11px 6px; background:#0f172a; border:1px solid #334155; border-radius:7px; animation:profileDetailIn .2s ease-out; }
+.profile-person-detail strong { font-size:10px; letter-spacing:1px; color:#38bdf8; }
+.profile-person-detail span { font-size:13px; color:#cbd5e1; }
+.profile-select-footer { margin:60px 0 0; font-size:10px; letter-spacing:2px; color:#64748b; }
+@keyframes profileDetailIn { from {opacity:0;transform:translateY(-5px)} to {opacity:1;transform:translateY(0)} }
+@media(max-width:850px) { .profile-select {padding:35px 8px;} .profile-select-grid {grid-template-columns:repeat(2,minmax(0,160px));} }
+@media(max-width:450px) { .profile-select-grid {gap:12px;grid-template-columns:repeat(2,minmax(0,1fr));} .profile-name {font-size:15px;} }
+@media(prefers-reduced-motion:reduce) { .profile-picture,.profile-name,.profile-person-detail {animation:none;transition:none;} }
+
+/* ======================================
+   고양이 프로필 이미지 효과
+====================================== */
+
+/* 프로필 이미지 영역 */
+.profile-picture {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* 고양이 사진 기본 상태 */
+.profile-picture img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* 기본 상태: 반투명 */
+    opacity: 0.15;
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+
+    z-index: 1;
+}
+
+/* 이름 첫 글자 */
+.profile-picture .profile-initial {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
+
+    transition: opacity 0.4s ease;
+}
+
+/* 프로필 클릭 시 고양이 사진 선명하게 */
+.profile-person[open] .profile-picture img {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* 클릭하면 이름 첫 글자 사라짐 */
+.profile-person[open] .profile-initial {
+    opacity: 0;
+}
+
+/* 선택된 프로필 강조 */
+.profile-person[open] .profile-picture {
+    outline: 3px solid white;
+    outline-offset: -3px;
+}
+
+/* 선택된 팀원 이름 강조 */
+.profile-person[open] .profile-name {
+    color: #ffffff;
+}
+
+/* =========================================
+   팀원 상세 소개 - 기존 기능 유지 버전
+========================================= */
+
+/* 상세 소개 영역 */
+.team-profile-details {
+    max-width: 850px;
+    margin: 30px auto 0;
+    text-align: left;
+}
+
+/* 기본적으로 모든 소개 카드 숨기기 */
+.team-info-card {
+    display: none;
+    padding: 28px 32px;
+    background: #111827;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    color: white;
+    animation: teamInfoFade 0.4s ease;
+}
+
+/* 선택된 팀원에 해당하는 카드만 표시 */
+.profile-select:has(.profile-red[open])
+.team-info-red {
+    display: block;
+}
+
+.profile-select:has(.profile-yellow[open])
+.team-info-yellow {
+    display: block;
+}
+
+.profile-select:has(.profile-cyan[open])
+.team-info-cyan {
+    display: block;
+}
+
+.profile-select:has(.profile-gray[open])
+.team-info-gray {
+    display: block;
+}
+
+/* 팀원별 포인트 색상 */
+.team-info-red {
+    border-top: 3px solid #16A7BF;
+    --team-color: #16A7BF;
+}
+
+.team-info-yellow {
+    border-top: 3px solid #38B89A;
+    --team-color: #38B89A;
+}
+
+.team-info-cyan {
+    border-top: 3px solid #A78BDA;
+    --team-color: #A78BDA;
+}
+
+.team-info-gray {
+    border-top: 3px solid #E47BA9;
+    --team-color: #E47BA9;
+}
+
+/* 역할 표시 */
+.team-info-label {
+    display: inline-block;
+    background: var(--team-color);
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 7px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+/* 팀원 이름 */
+.team-info-card h3 {
+    font-size: 28px;
+    margin: 18px 0 12px;
+    color: white;
+}
+
+/* 소개 문구 */
+.team-info-intro {
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* 소제목 */
+.team-info-card h4 {
+    color: var(--team-color);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    margin: 22px 0 8px;
+}
+
+/* 일반 설명 */
+.team-info-card p {
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* 프로필 선택 시 고양이 이미지 */
+.profile-person[open] .profile-picture img {
+    opacity: 1;
+}
+
+/* 프로필 선택 시 첫 글자 숨기기 */
+.profile-person[open] .profile-initial {
+    opacity: 0;
+}
+
+/* 등장 애니메이션 */
+@keyframes teamInfoFade {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 모바일 대응 */
+@media (max-width: 650px) {
+    .team-info-card {
+        padding: 20px;
+    }
+
+    .team-info-card h3 {
+        font-size: 24px;
+    }
+}
+
+/* =========================================================
+   목차 내용 공통 모양 (공통 디자인 규칙)
+   - sec: 한 목차의 내용 전체를 감싸는 상자
+   - 영어 소제목(sec-kicker) + 큰 한글 제목(sec-title) + 설명(sec-desc)
+   - sec-card: 큰 토글 (내부 카드 #111827)
+   - sec-sub: 큰 토글 안의 작은 토글
+   - 다른 목차에서도 같은 이름표를 쓰면 같은 모양이 돼요
+   ========================================================= */
+.sec { width: 100%; color: #ffffff; }
+.sec-kicker {
+    margin: 0 0 10px;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+.sec-title {
+    margin: 0;
+    font-size: clamp(24px, 2.6vw, 34px);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+.sec-desc {
+    margin: 10px 0 28px;
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* 큰 토글: 내부 카드 */
+.sec-card {
+    margin-top: 14px;
+    background: #111827;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+.sec-card[open] { border-color: #38bdf8; }     /* 열린 카드는 포인트 색 테두리 */
+.sec-card > summary {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px 56px 20px 24px;
+    position: relative;
+    list-style: none;                          /* 기본 ▶ 표시 숨김 */
+    cursor: pointer;
+}
+.sec-card > summary::-webkit-details-marker { display: none; }
+/* 오른쪽 끝의 + / − 표시 */
+.sec-card > summary::after {
+    content: '+';
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 22px;
+    font-weight: 300;
+}
+.sec-card[open] > summary::after { content: '−'; color: #38bdf8; }
+.sec-card > summary:hover .sec-card-title { color: #38bdf8; }
+.sec-card-kicker {
+    color: #38bdf8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.sec-card-title {
+    font-size: 20px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+.sec-card-body {
+    padding: 4px 24px 24px;
+    border-top: 1px solid #334155;
+}
+
+/* 작은 토글: 큰 토글 안에서 한 줄씩 */
+.sec-sub { border-bottom: 1px solid #334155; }
+.sec-sub:last-child { border-bottom: none; }
+.sec-sub > summary {
+    padding: 16px 0;
+    list-style: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: #cbd5e1;
+    transition: color 0.2s;
+}
+.sec-sub > summary::-webkit-details-marker { display: none; }
+.sec-sub > summary::before {                  /* 앞쪽 작은 화살표 (열리면 아래로 돌아감) */
+    content: '›';
+    display: inline-block;
+    width: 18px;
+    text-align: center;
+    margin-right: 4px;
+    color: #38bdf8;
+    transition: transform 0.2s;
+}
+.sec-sub[open] > summary::before { transform: rotate(90deg); }
+.sec-sub > summary:hover,
+.sec-sub[open] > summary { color: #ffffff; }
+.sec-sub img {
+    display: block;
+    max-width: 100%;
+    margin: 0 0 18px 18px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+}
+
+/* 쌍 이미지 3장 나란히 (자르지 않고 크기만 맞춤) */
+.sec-pairs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 0 0 18px 18px;
+}
+.sec-pairs img { width: 100%; height: auto; margin: 0; }
+@media (max-width: 700px) {
+    .sec-pairs { grid-template-columns: 1fr; }   /* 좁은 화면에서는 한 줄에 한 장 */
+}
+
+/* 목표·가설 */
+.sec-label {
+    margin: 22px 0 8px;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.sec-goal { margin: 0; font-size: 18px; font-weight: 600; }
+.sec-list { margin: 0; padding: 0; list-style: none; counter-reset: hyp; }
+.sec-list li {
+    counter-increment: hyp;
+    display: flex;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid #334155;
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.6;
+}
+.sec-list li:last-child { border-bottom: none; }
+.sec-list li::before {                        /* 01, 02 … 번호를 포인트 색으로 */
+    content: counter(hyp, decimal-leading-zero);
+    color: #38bdf8;
+    font-weight: 700;
+    min-width: 22px;
+}
+
+/* 가설 번호를 1-1, 2-3처럼 직접 적기 */
+.sec-list-num li::before { content: attr(data-num); min-width: 30px; }
+.sec-hyp-title { margin: 6px 0 2px; color: #ffffff; font-size: 15px; font-weight: 700; }
+.sec-hyp-sub { margin-top: 12px; }
+.sec-hyp-sub > summary { color: #ffffff; font-weight: 700; }
+.sec-hyp-sub .sec-list { margin: 0 0 8px 22px; }
+
+/* 용어 정의 (왼쪽 용어, 오른쪽 설명) */
+.sec-def {
+    display: grid;
+    grid-template-columns: minmax(150px, max-content) 1fr;   /* 용어 칸은 최소 150px, 긴 용어는 그만큼 넓게 */
+    margin: 8px 0 0;
+}
+.sec-def dt,
+.sec-def dd {
+    margin: 0;
+    padding: 14px 0;
+    border-bottom: 1px solid #334155;
+    line-height: 1.6;
+}
+.sec-def dt { color: #38bdf8; font-weight: 700; padding-right: 20px; }   /* 용어와 설명 사이 간격 (밑줄은 끊기지 않게) */
+.sec-def dd { color: #cbd5e1; font-size: 15px; }
+.sec-def dt:nth-last-of-type(1),
+.sec-def dd:last-of-type { border-bottom: none; }
+
+/* 번호 목록 안의 굵은 제목 + 설명 */
+.sec-list strong { display: block; color: #ffffff; font-size: 16px; margin-bottom: 4px; }
+.sec-list p { margin: 0; color: #94a3b8; font-size: 14px; line-height: 1.7; }
+
+/* =========================================================
+   변수 탐색 그래프 (분석 결과 3)
+   - 막대가 바닥에서 위로 솟아올라요 (높이 = 상위 몇 %를 뒤집은 값)
+   ========================================================= */
+.vc-card {
+    margin-top: 14px;
+    padding: 24px 24px 16px;
+    background: #111827;
+    border: 1px solid #334155;
+    border-radius: 12px;
+}
+.vc-chart {
+    display: flex;
+    align-items: flex-end;            /* 막대들을 바닥에 맞춰 세움 */
+    gap: 24px;
+    height: 320px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #334155; /* 바닥선 */
+    overflow-x: auto;                 /* 막대가 많아지면 옆으로 넘기기 */
+}
+.vc-bar {
+    flex: 0 0 120px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    min-width: 0;
+}
+.vc-track {                           /* 막대가 자랄 수 있는 최대 높이 (100%) */
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+}
+.vc-pillar {
+    width: 56px;
+    height: 0;                        /* 처음엔 0 → JS가 높이를 주면 솟아오름 */
+    border-radius: 8px 8px 0 0;
+    transition: height 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.vc-value { font-size: 14px; font-weight: 700; color: #ffffff; }
+.vc-label { font-size: 13px; color: #cbd5e1; text-align: center; line-height: 1.3; }
+.vc-meta  { font-size: 11px; color: #94a3b8; text-align: center; }
+.vc-gray .vc-pillar { background: #475569; }   /* 비원작 */
+.vc-blue .vc-pillar { background: #38bdf8; }   /* 웹툰원작 (포인트 색) */
+.vc-var .vc-pillar { background: #7dd3fc; }   /* 변수 막대 (포인트 색보다 연하게) */
+.vc-small { opacity: 0.4; }                    /* 5편 미만: 표본이 작아서 흐리게 */
+.vc-bar.leaving .vc-value,
+.vc-bar.leaving .vc-label,
+.vc-bar.leaving .vc-meta { opacity: 0; transition: opacity 0.3s; }   /* 사라지는 막대는 글자 먼저 지움 */
+
+/* 곱하기 모드: 세 번째 막대를 누르면 작품 목록 */
+.vc-clickable { cursor: pointer; }
+.vc-bar .vc-meta { min-height: 30px; }   /* 모든 막대 아래 칸을 2줄 높이로 맞춤 → '작품 보기' 줄이 생겨도 막대 바닥이 같은 줄에 서요 */
+.vc-clickable .vc-meta::after { content: '작품 보기 ▼'; display: block; margin-top: 2px; color: #38bdf8; }   /* 누를 수 있다는 표시 */
+.vc-clickable.open .vc-meta::after { content: '닫기 ▲'; }
+.vc-clickable:hover .vc-meta { color: #ffffff; }
+.vc-list[hidden] { display: none; }
+.vc-list {
+    margin-top: 14px;
+    padding: 14px 16px;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+}
+.vc-list-title { margin: 0 0 10px; font-size: 12px; color: #94a3b8; }
+.vc-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.vc-chip {
+    padding: 4px 10px;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #ffffff;
+}
+.vc-chip em { margin-left: 6px; font-style: normal; font-size: 11px; color: #94a3b8; }   /* 작품별 상위 % (작게) */
+.vc-list-empty { font-size: 13px; color: #94a3b8; }
+
+/* 변수 버튼 */
+.vc-buttons { margin-top: 18px; display: flex; flex-direction: column; gap: 8px; }
+.vc-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.vc-group { width: 84px; flex-shrink: 0; font-size: 12px; color: #94a3b8; }
+.vc-btn {
+    padding: 6px 12px;
+    background: transparent;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: #cbd5e1;
+    font-size: 13px;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+}
+.vc-btn:hover { border-color: #38bdf8; color: #ffffff; }
+.vc-btn.on { background: #38bdf8; border-color: #38bdf8; color: #0f172a; font-weight: 600; }   /* 고른 버튼 */
+
+/* 모드 버튼 ([개별] [곱하기]) */
+.vc-modes { display: flex; align-items: center; gap: 6px; margin-bottom: 16px; }
+.vc-mode {
+    padding: 6px 16px;
+    background: transparent;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: #94a3b8;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.vc-mode.on { background: #1e293b; border-color: #38bdf8; color: #ffffff; font-weight: 600; }
+.vc-mode-help { margin-left: 8px; font-size: 12px; color: #94a3b8; }
+.vc-bar .vc-label { max-width: 120px; height: 50px; }   /* 글자 칸 높이를 3줄로 고정 → 이름이 길어도 막대 바닥이 같은 줄에 서요 */
+/* 전체 선택 버튼 (모드 줄 오른쪽 끝) */
+.vc-single-tools { margin-left: auto; display: flex; gap: 6px; }   /* 정렬·전체 선택 버튼 묶음 (오른쪽 끝) */
+.vc-all {
+    padding: 6px 14px;
+    background: transparent;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: #cbd5e1;
+    font-size: 13px;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+}
+.vc-all:hover { border-color: #38bdf8; color: #ffffff; }
+
+/* ===== 10. 마무리 전용 디자인: 다른 페이지 스타일에 영향 없음 ===== */
+.ending-page { color:#fff; width:100%; box-sizing:border-box; }
+.ending-hero { display:grid; grid-template-columns:45% 55%; align-items:center; min-height:430px; overflow:hidden; }
+.ending-copy { position:relative; z-index:2; padding:34px 12px 34px 20px; }
+.ending-kicker { margin:0 0 20px; color:#38BDF8; font-size:11px; font-weight:700; letter-spacing:2px; }
+.ending-title { margin:0 0 22px; font-size:clamp(24px,2.6vw,43px); line-height:1.35; letter-spacing:-1.3px; word-break:keep-all; }
+.ending-title span { color:#38BDF8; }
+.ending-description { margin:0; color:#94A3B8; font-size:14px; line-height:1.9; word-break:keep-all; }
+.ending-rule { height:1px; background:#334155; max-width:380px; margin:25px 0 22px; }
+.ending-thanks { margin:0 0 7px; font-size:18px; font-weight:700; }
+.ending-subthanks { margin:0 0 23px; color:#94A3B8; font-size:13px; }
+.ending-replay { background:#38BDF8; color:#0F172A; border:1px solid #38BDF8; border-radius:8px; padding:12px 17px; font-weight:700; cursor:pointer; transition:background .2s,transform .2s; }
+.ending-replay:hover { background:#7DD3FC; transform:translateY(-2px); }
+.ending-art { height:390px; position:relative; overflow:hidden; isolation:isolate; border-radius:10px; background:#111827; }
+.ending-art::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,#1E293B 0%,rgba(30,41,59,.55) 13%,transparent 45%),linear-gradient(0deg,rgba(15,23,42,.5),transparent 35%); z-index:2; pointer-events:none; }
+.ending-poster { position:absolute; width:48%; height:47%; object-fit:cover; border:1px solid #334155; border-radius:8px; box-shadow:0 10px 24px #0007; transform:rotate(-5deg); }
+.ending-poster-1 { top:-5%; left:0%; transform:rotate(-8deg); }
+.ending-poster-2 { top:-10%; left:48%; transform:rotate(6deg); }
+.ending-poster-3 { top:29%; left:23%; transform:rotate(3deg); z-index:1; }
+.ending-poster-4 { top:59%; left:-2%; transform:rotate(-5deg); }
+.ending-poster-5 { top:58%; left:55%; transform:rotate(8deg); }
+.ending-footer { border-top:1px solid #334155; padding:16px 20px 5px; display:flex; justify-content:space-between; gap:20px; align-items:flex-start; }
+.ending-footer > p { margin:5px 0; font-size:10px; color:#94A3B8; letter-spacing:1px; line-height:1.8; }
+.ending-footer > p span { display:block; color:#64748B; }
+.ending-references { min-width:160px; max-width:480px; }
+.ending-references summary { list-style:none; cursor:pointer; color:#38BDF8; font-size:12px; font-weight:700; letter-spacing:1px; text-align:right; padding:6px 0; }
+.ending-references summary::-webkit-details-marker { display:none; }
+.ending-references summary span { margin-left:6px; }
+.ending-reference-content { margin-top:12px; padding:18px 20px; background:#111827; border:1px solid #334155; border-radius:10px; color:#94A3B8; font-size:12px; line-height:1.8; }
+.ending-reference-content h3 { margin:0 0 8px; color:#fff; font-size:15px; }
+.ending-reference-content p { margin:0 0 8px; }
+.ending-reference-content ul { padding-left:18px; margin:0; }
+@media(max-width:850px) { .ending-hero { grid-template-columns:1fr; } .ending-copy { padding:25px 10px; } .ending-art { height:270px; } .ending-footer { flex-wrap:wrap; } .ending-references { width:100%; max-width:none; } .ending-references summary { text-align:left; } }
+@media(prefers-reduced-motion:reduce) { .ending-replay { transition:none; } }
+
+/* 작은 토글 안에 넣는 움직이는 그래프 (Plotly HTML을 액자처럼 끼워 넣기) */
+.sec-sub .sec-frame {
+    display: block;
+    width: calc(100% - 18px);
+    height: 470px;
+    margin: 0 0 18px 18px;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    background: #111827;
+}
+
+/* 분석 결과 1: matplotlib로 만든 그래프 그림 */
+.sec-chart-img { display: block; width: 100%; max-width: 820px; margin: 0 auto; border-radius: 8px; }
+.vc-card + .vc-card { margin-top: 16px; }   /* 그래프 카드끼리 간격 */
+/* 큰 액자 그래프 (토글 밖에 바로 보이는 것) */
+.sec-frame-wide {
+    display: block;
+    width: 100%;
+    height: 540px;
+    border: 0;
+    border-radius: 8px;
+    background: #111827;
+}
+/* 그래프 밑 설명 칸 */
+.sec-note {
+    margin: 14px 0 0;
+    padding-top: 12px;
+    border-top: 1px solid #334155;
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   분석 결과 4 · 최종 인사이트 (팀원 작업) — result-final / result-clean 전용
+   ========================================================= */
+.result-final{width:100%;color:#fff;box-sizing:border-box;overflow:hidden;font-family:'Segoe UI','Malgun Gothic',sans-serif}
+.result-final *{box-sizing:border-box}
+
+/* 제목 */
+.result-clean .result-final-head{padding:4px 4px 14px}
+.result-final-kicker{margin:0 0 12px;color:#38bdf8;font-size:11px;font-weight:800;letter-spacing:2.5px}
+.result-clean .result-final-head h2{margin:0;font-size:clamp(26px,2.7vw,36px);line-height:1.25;letter-spacing:-1px;font-weight:750;word-break:keep-all}
+.result-final-head h2 em{color:#7dd3fc;font-style:normal}
+.result-clean .result-final-head>p:last-child{margin:8px 0 0;color:#94a3b8;font-size:13px;line-height:1.6}
+
+/* 인포그래픽 패널 */
+.result-clean .result-clean-visual{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:center;min-width:0;min-height:0;padding:18px 24px 12px;overflow:hidden;border:1px solid #334155;border-radius:12px;background:radial-gradient(ellipse at 50% 55%,#1d3553 0%,#111827 75%)}
+.result-clean-visual::before{content:'';position:absolute;inset:0;z-index:-1;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:32px 32px;mask-image:linear-gradient(to bottom,transparent 8%,#000 100%)}
+.result-final-glow{position:absolute;top:20%;left:35%;z-index:-1;width:330px;height:240px;border-radius:50%;background:#38bdf825;filter:blur(70px);pointer-events:none}
+.result-clean-visual-head{display:flex;width:100%;align-items:center;justify-content:space-between;gap:12px;color:#38bdf8;font-size:11px;font-weight:800;letter-spacing:2px}
+.result-clean-visual-head small{color:#64748b;font-size:10px;letter-spacing:1px}
+
+/* 기둥 배치 */
+.result-clean .result-clean-pillars{display:flex;width:100%;min-width:0;min-height:260px;align-items:flex-end;justify-content:center;gap:clamp(30px,5vw,90px);padding:22px 0 10px}
+.result-clean .result-final-pillar{--p:rgb(var(--pillar-color));display:flex;flex:0 1 145px;max-width:145px;min-width:0;flex-direction:column;align-items:center;justify-content:flex-end;padding:0;border:0;background:none;color:#fff;cursor:pointer;filter:saturate(.8);opacity:.8;transition:filter .3s,opacity .3s,transform .3s}
+.result-clean .result-final-pillar:hover,.result-clean .result-final-pillar.is-active{opacity:1;filter:saturate(1.2) drop-shadow(0 0 12px rgba(var(--pillar-color),.25));transform:translateY(-8px)}
+.result-final-float{margin-bottom:9px;padding:7px 13px;border:1px solid rgba(255,255,255,.32);border-radius:8px;background:linear-gradient(135deg,rgba(var(--pillar-color),.9),rgba(var(--pillar-color),.55));box-shadow:0 8px 18px #0005;color:#fff;font-size:10px;font-weight:800;letter-spacing:1px;white-space:nowrap;transform:rotate(-4deg)}
+
+/* 입체 원기둥: 높이는 HTML의 --pillar-height 사용 */
+.result-final-cylinder{position:relative;display:block;width:100%;max-width:114px;height:var(--pillar-height);transform-origin:bottom;filter:drop-shadow(8px 12px 8px #0004);animation:resultFinalGrow .8s both;animation-delay:var(--pillar-delay,0s)}
+.result-final-cylinder-body{position:absolute;inset:13px 0 11px;border-radius:0 0 45% 45% / 0 0 10% 10%;background:linear-gradient(90deg,rgba(var(--pillar-color),.35),rgba(var(--pillar-color),.75) 35%,rgba(var(--pillar-color),.5) 70%,rgba(var(--pillar-color),.23));border-left:1px solid rgba(255,255,255,.3);border-right:1px solid rgba(255,255,255,.15);box-shadow:inset 0 0 22px rgba(255,255,255,.13)}
+.result-final-cylinder-body b{position:absolute;top:43%;left:0;width:100%;color:#ffffffaa;font-size:clamp(19px,2.5vw,31px);font-weight:300;text-align:center}
+.result-final-cylinder-top,.result-final-cylinder-bottom{position:absolute;left:0;width:100%;height:28px;border:1px solid #ffffff70;border-radius:50%;background:linear-gradient(135deg,rgba(var(--pillar-color),.85),rgba(var(--pillar-color),.42));z-index:2}
+.result-final-cylinder-top{top:0;box-shadow:inset 0 4px 8px #ffffff2b,0 4px 9px #0002}
+.result-final-cylinder-bottom{bottom:0;z-index:0;background:rgba(var(--pillar-color),.28);border-color:rgba(var(--pillar-color),.7);box-shadow:0 0 26px rgba(var(--pillar-color),.4)}
+.result-clean .result-final-pillar-title{display:block;margin-top:10px;min-height:20px;color:#cbd5e1;font-size:13px;font-weight:700;line-height:1.5;text-align:center;word-break:keep-all;white-space:nowrap}
+.result-final-pillar.is-active .result-final-pillar-title{color:#fff}
+.result-clean .result-final-visual-note{margin:4px 0 0;color:#94a3b8;font-size:10px;line-height:1.5;text-align:center}
+
+/* 선택한 분석 설명 */
+.result-clean .result-clean-detail{display:grid;grid-template-columns:36% minmax(0,1fr);align-items:center;gap:24px;margin-top:14px;padding:20px 24px;border:1px solid #334155;border-radius:12px;background:#111827}
+.result-final-detail-tag{color:#38bdf8;font-size:10px;font-weight:800;letter-spacing:1.5px}
+.result-clean .result-clean-detail h3{margin:7px 0 0;font-size:18px;line-height:1.5;word-break:keep-all}
+.result-clean .result-clean-detail p{margin:0;color:#cbd5e1;font-size:13px;line-height:1.75;word-break:keep-all}
+
+/* 최하단 KEY MESSAGE */
+.result-clean .result-clean-conclusion{margin:14px 0 0;padding:20px 24px;border:1px solid #334155;border-left:3px solid #38bdf8;border-radius:12px;background:linear-gradient(110deg,#172b46,#111827)}
+.result-final-conclusion>span{color:#38bdf8;font-size:11px;font-weight:800;letter-spacing:2px}
+.result-clean .result-clean-conclusion h3{margin:8px 0;font-size:clamp(18px,2vw,24px);line-height:1.45;letter-spacing:-.4px;word-break:keep-all}
+.result-final-conclusion h3 em{color:#7dd3fc;font-style:normal}
+.result-clean .result-clean-conclusion p{margin:0;color:#94a3b8;font-size:12px;line-height:1.6}
+
+@keyframes resultFinalGrow{from{transform:scaleY(.1);opacity:.3}to{transform:scaleY(1);opacity:1}}
+@media(max-width:850px){.result-clean .result-clean-pillars{gap:20px}.result-clean .result-clean-detail{grid-template-columns:1fr;gap:12px}}
+@media(max-width:580px){.result-clean .result-final-head h2{font-size:25px}.result-clean .result-clean-visual{padding:15px 10px}.result-clean .result-clean-pillars{gap:8px;min-height:225px}.result-clean .result-final-pillar{flex:1;min-width:0}.result-clean .result-final-pillar[data-result='0']{--pillar-height:105px!important}.result-clean .result-final-pillar[data-result='1']{--pillar-height:130px!important}.result-clean .result-final-pillar[data-result='2']{--pillar-height:155px!important}.result-final-cylinder{max-width:85px}.result-final-float{padding:7px 6px;font-size:9px}.result-clean .result-final-pillar-title{font-size:10px;white-space:normal}.result-clean .result-clean-detail,.result-clean .result-clean-conclusion{padding:17px}}
+@media(prefers-reduced-motion:reduce){.result-final-cylinder{animation:none}.result-final-pillar{transition:none}}
+
+/* ==========================================
+   DATA & TOOLS - MINIMAL BLUE GLASS
+========================================== */
+
+.research-section {
+    --research-blue: #38BDF8;
+    --research-muted: #94A3B8;
+}
+
+/* 데이터/도구 영역 */
+
+.research-section .research-body {
+    padding: 22px 24px 18px;
+}
+
+.research-group + .research-group {
+    margin-top: 24px;
+}
+
+/* 소제목 */
+
+.research-group-heading {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+
+    color: var(--research-blue);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.research-group-line {
+    height: 1px;
+    flex: 1;
+    background: #334155;
+}
+
+/* 카드 그리드 */
+
+.research-icon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+/* 카드 */
+
+.research-mini-card {
+    min-width: 0;
+    min-height: 178px;
+    padding: 22px 14px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border-radius: 12px;
+    border: 1px solid rgba(56, 189, 248, 0.20);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30, 58, 100, 0.36),
+            rgba(15, 23, 42, 0.72)
+        );
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.research-mini-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(56, 189, 248, 0.65);
+
+    box-shadow:
+        0 0 20px rgba(56, 189, 248, 0.10);
+}
+
+/* 아이콘 */
+
+.research-mini-icon {
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 14px;
+
+    border-radius: 14px;
+    background: rgba(56, 189, 248, 0.10);
+    border: 1px solid rgba(56, 189, 248, 0.20);
+
+    color: #7DD3FC;
+}
+
+.research-mini-icon svg {
+    width: 27px;
+    height: 27px;
+}
+
+/* 텍스트 */
+
+.research-mini-name {
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: 0.3px;
+}
+
+.research-mini-value {
+    margin: 7px 0;
+
+    color: #7DD3FC;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.research-mini-card p {
+    margin: 0;
+    color: #CBD5E1;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.research-mini-card small {
+    margin-top: 7px;
+    color: #64748B;
+    font-size: 10px;
+}
+
+/* 도구 카드 */
+
+.research-tool-card {
+    min-height: 145px;
+}
+
+.research-tool-title {
+    margin-bottom: 7px;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 750;
+}
+
+/* 하단 프로세스 */
+
+.research-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    margin-top: 24px;
+    padding: 12px;
+
+    color: #7DD3FC;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 1px;
+}
+
+.research-flow-arrow {
+    color: #64748B;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+/* 모바일 */
+
+@media (max-width: 650px) {
+
+    .research-section .research-body {
+        padding: 16px 12px;
+    }
+
+    .research-icon-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .research-mini-card {
+        min-height: 155px;
+        padding: 15px 8px;
+    }
+
+    .research-mini-value {
+        font-size: 23px;
+    }
+
+    .research-flow {
+        gap: 8px;
+        font-size: 9px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .research-mini-card {
+        transition: none;
+    }
+}
+
+/* ==========================================
+   DATA & TOOLS - COMPACT VERSION
+   기존 디자인 유지 + 크기 축소
+========================================== */
+
+/* 전체 내부 여백 축소 */
+.research-section .research-body {
+    padding: 14px 20px;
+}
+
+/* 그룹 사이 간격 축소 */
+.research-section .research-group + .research-group {
+    margin-top: 16px;
+}
+
+/* 소제목 여백 */
+.research-section .research-group-heading {
+    margin-bottom: 10px;
+}
+
+/* 카드 사이 간격 */
+.research-section .research-icon-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+/* 카드 가로형으로 변경 */
+.research-section .research-mini-card {
+    min-height: 90px;
+    padding: 12px 14px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    column-gap: 10px;
+    row-gap: 4px;
+
+    border-radius: 10px;
+}
+
+/* 아이콘 크기 축소 */
+.research-section .research-mini-icon {
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    border-radius: 9px;
+}
+
+.research-section .research-mini-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* 데이터 이름 */
+.research-section .research-mini-name {
+    font-size: 12px;
+}
+
+/* 데이터 수치 */
+.research-section .research-mini-value {
+    margin: 0;
+    font-size: 20px;
+}
+
+/* 설명은 작은 보조 텍스트 */
+.research-section .research-mini-card p {
+    flex-basis: 100%;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+/* 세부 출처는 공간 절약을 위해 숨김 */
+.research-section .research-mini-card small {
+    display: none;
+}
+
+/* 도구 카드도 동일한 크기 */
+.research-section .research-tool-card {
+    min-height: 76px;
+}
+
+.research-section .research-tool-title {
+    margin: 0;
+    font-size: 13px;
+}
+
+/* 하단 흐름 간격 축소 */
+.research-section .research-flow {
+    margin-top: 12px;
+    padding: 8px;
+    gap: 12px;
+    font-size: 10px;
+}
+
+/* 좁은 화면 대응 */
+@media (max-width: 750px) {
+    .research-section .research-icon-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .research-section .research-mini-card {
+        min-height: 96px;
+    }
+}
+
+@media (max-width: 480px) {
+    .research-section .research-icon-grid {
+        grid-template-columns: 1fr;
+    }
+}

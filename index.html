@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이김²팀</title>
+    <!-- 홈 화면 제목용 아주 굵은 영문 글꼴 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-mode">
+    <header class="header">
+        <div class="team-name" onclick="goHome()">이김²</div>
+        <!-- 상단 목차 8개 및 클릭 시 해당 콘텐츠로 이동/노출 -->
+        <nav class="top-nav" id="topNav">
+            <a href="javascript:void(0)" onclick="selectItem(1)">팀 소개</a>
+            <a href="javascript:void(0)" onclick="selectItem(2)">분석 배경</a>
+            <a href="javascript:void(0)" onclick="selectItem(3)">분석 방법</a>
+            <a href="javascript:void(0)" onclick="selectItem(4)">전처리 과정</a>
+            <a href="javascript:void(0)" onclick="selectItem(5)">분석 결과</a>
+            <a href="javascript:void(0)" onclick="selectItem(6)">분석 결과2</a>
+            <a href="javascript:void(0)" onclick="selectItem(7)">분석 결과3</a>
+            <a href="javascript:void(0)" onclick="selectItem(8)">분석 결과4</a>
+            <a href="javascript:void(0)" onclick="selectItem(9)">한계 및 후속연구</a>
+            <a href="javascript:void(0)" onclick="selectItem(10)">마무리</a>
+        </nav>
+        <!-- 현재 노출 중인 목차 번호 범위 표시 -->
+        <div class="nav-range-indicator" id="rangeIndicator">목차 1 ~ 4 표시 중</div>
+    </header>
+
+    <!-- 홈 화면: 처음에만 보이고, 목차를 누르면 사라져요 -->
+    <section class="home" id="home" onclick="leaveHome()">
+        <h1 id="homeTitle">Cut To Scene</h1>
+        <p>웹툰 원작 드라마 흥행 요인 분석</p>
+    </section>
+
+    <main class="main-container">
+        <!-- 슬라이더 영역 (화면에 4개 노출, 좌우 화살표) -->
+        <div class="slider-wrapper">
+            <button class="arrow-btn prev-btn" onclick="slideCards(-1)">&#10094;</button>
+        <!-- 안내 사항 (4번 이미지 변경 방법)
+            index.html 파일 내부의 <img src="[https://via.placeholder.com/80]
+            (https://via.placeholder.com/80)" alt="목차1 이미지" class="card-img"> 
+            부분에서 src 속성값만 원하시는 이미지 경로(예: images/item1.png)로 변경하시면 카드의 이미지가 즉시 교체됩니다. -->    
+            <div class="card-container">
+                <div class="card-track" id="cardTrack">
+                    <!-- 4. 목차 카드 이미지 영역 (src 속성을 변경하여 직접 이미지 교체 가능) -->
+                    <div class="card" onclick="selectItem(1 )">
+                        <img src="./pjfile/넷플릭스아이콘.png" alt="목차1 이미지" class="card-img">
+                        <span class="card-title">팀 소개</span>
+                    </div>
+                    <div class="card" onclick="selectItem(2)">
+                        <img src="./pjfile/네웹아이콘.png" alt="목차2 이미지" class="card-img">
+                        <span class="card-title">분석 배경 및 목표</span>
+                    </div>
+                    <div class="card" onclick="selectItem(3)">
+                        <img src="./pjfile/카카오페이지아이콘.png" alt="목차3 이미지" class="card-img">
+                        <span class="card-title">분석 기준 및 방법</span>
+                    </div>
+                    <div class="card" onclick="selectItem(4)">
+                        <img src="./pjfile/왓챠아이콘.png" alt="목차4 이미지" class="card-img">
+                        <span class="card-title">사용한 라이브러리 및 데이터 전처리 과정</span>
+                    </div>
+                    <div class="card" onclick="selectItem(5)">
+                        <img src="./pjfile/웨이브아이콘.png" alt="목차5 이미지" class="card-img">
+                        <span class="card-title">분석 결과 1</span>
+                    </div>
+                    <div class="card" onclick="selectItem(6)">
+                        <img src="./pjfile/디플아이콘.png" alt="목차6 이미지" class="card-img">
+                        <span class="card-title">분석 결과 2</span>
+                    </div>
+                    <div class="card" onclick="selectItem(7)">
+                        <img src="./pjfile/쿠플아이콘.png" alt="목차7 이미지" class="card-img">
+                        <span class="card-title">분석 결과 3</span>
+                    </div>
+                    <div class="card" onclick="selectItem(8)">
+                        <img src="./pjfile/티빙아이콘.png" alt="목차8 이미지" class="card-img">
+                        <span class="card-title">분석 결과 4</span>
+                    </div>
+                    <div class="card" onclick="selectItem(9)">
+                        <img src="./pjfile/리디아이콘.png" alt="목차9 이미지" class="card-img">
+                        <span class="card-title">한계 및 후속 연구</span>
+                    </div>
+                    <div class="card" onclick="selectItem(10)">
+                        <img src="./pjfile/레진아이콘.png" alt="목차10 이미지" class="card-img">
+                        <span class="card-title">참고문헌, 마무리 페이지</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="arrow-btn next-btn" onclick="slideCards(1)">&#10095;</button>
+        </div>
+
+        <!-- 2, 3. 컨텐츠 박스 (평소에는 숨겨져 있다가 카드/상단목차 클릭 시 동적으로 나타남) -->
+        <div class="detail-box" id="detailBox" style="display: none;">
+            <div class="detail-header">
+                <span id="detailTitle">PROJECT DETAILS</span>
+                <button onclick="closeDetail()">×</button>
+            </div>
+            <div class = "detailContent" id ="detailContent">
+                <!-- 선택된 목차에 따른 상세 내용이 동적으로 들어갑니다. -->
+            </div>
+        </div>
+    </main>
+
+    <!-- 웹툰·드라마 포스터 띠 (보기만 하는 장식) -->
+    <section class="poster-strip" id="posterStrip">
+        <div class="poster-track" id="posterTrack">
+            <!-- script.js가 PAIRS 목록을 보고 카드를 채워 넣어요 -->
+        </div>
+    </section>
+
+    <script src="chart_data.js"></script>   <!-- 그래프 재료 (newdb/make_chart_data.py로 만듦) -->
+    <script src="script.js"></script>
+</body>
+</html>
