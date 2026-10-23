@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 배열안에 객체넣기 -> [{},{},{}]
+        let poketmon = [
+                {
+                    name : '피카츄',
+                    type : '전기',
+                    attack : function(){
+                        console.log('백만볼트 공격!');
+                    } 
+                },
+                {
+                    name : '파이리',
+                    type : '불',
+                    attack : function(){
+                        console.log('불 공격!');
+                    }
+                },
+                {
+                    name : '이상해씨',
+                    type : '풀',
+                    attack : function(){
+                        console.log('채찍 공격!!');
+                    }
+                }
+        ]
+        // 반복문을 활용해서 모든 포켓몬의 정보를 출력하기
+        // 포켓몬 이름은 ??이고, 타입은 ??입니다.
+        // ~~공격!! 출력하기
+            for (let i = 0 ; i <=3; i += 1){
+                console.log(`포켓몬 이름은${poketmon[i].name}이고,
+                 타입은 ${poketmon[i].type}입니다.`);
+                poketmon[i].attack();
+            }
+
+    </script>
+</body>
+</html>

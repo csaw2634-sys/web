@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="tit"> 
+        <span>오늘 <strong>날씨가 춥네요</strong></span>
+    </h1>
+    <div id="divTag">
+        <p> DOM 사용하기</p>
+        <p style="display: none"> 숨겨진 글씨</p>
+    </div>
+    <!-- 버튼 태그 생성 -->
+    <button onclick="makeH1()">h1태그 생성</button>
+    <button onclick="makeA()">a태그 생성</button>
+    <button onclick="makeUL()">ul태그 생성</button>
+    <!-- 생성된 태그들을 누적할 공간 -->
+     <div id="divDOM"></div>
+    <script>
+        let tit = document.getElementById('tit');
+        //document.querySelector('#tit');
+        console.log(tit);
+        console.log(tit.innerText);
+
+        //요소의 값 변경
+        // innerText : 요소의 값 접근/변경(텍스트만)
+        // innerHTML : 요소의 값 접근/변경(텍스트 + 태그)
+        tit.innerText = '<a href="#">요소값 변경</a>'; // 태그까지 문자열로 인식
+        tit.innerHTML = '<a href="https://www.naver.com">네이버로 이동</a>'
+
+        // div 요소에 접근해서 안에 있는 모든 내용 가져오기
+        let divTag = document.getElementById('divTag');
+        console.log(divTag.textContent);
+
+        let divDOM = document.getElementById('divDOM');
+
+        // h1태그 생성하는 함수
+        const makeH1 = () =>{
+            divDOM.innerHTML += '<h1>DOM 활용하기</h1>';
+        }
+        // a태그 생성하는 함수
+        // '구글로 이동'를 눌렀을 때 www.google.com으로 이동까지 가능하게
+        const makeA = () =>{
+            divDOM.innerHTML += '<a href="http://www.google.com">구글로 이동</a>';
+        }
+
+        // ul태그 생성하는 함수
+        // JS에서 기본문자열을 Enter를 문자로 인정하지 않음
+        // 백팁(``)은 줄바꿈 그대로 저장됨. 그래서 HTML 태그들을 넣을 때 자주 사용
+        const makeUL = () =>{
+            divDOM.innerHTML += `<ul>
+                                    <li>HTML</li> 
+                                    <li>CSS</li> 
+                                    <li>JS</li> 
+                                </ul>`;
+        }
+    </script>
+</body>
+</html>

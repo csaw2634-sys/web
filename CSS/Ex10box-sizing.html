@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            box-sizing 속성 : 요소의 크기에 padding과 border를 포함할 지 여부 판단
+
+            box-sizing : content-box;
+                => padding과 border가 요소 크기 바깥에 적용(기본값, 실제 크기 커짐)
+            box-sizing : border-box;
+                => padding과 border를 포함한 전체를 요소 크기로 계산(실제 크기 고정)
+
+            
+        */
+        div{
+            width: 100px;
+            height: 100px;
+            border: 20px black solid;
+            padding: 20px;
+        }
+        #cb{
+            background-color: turquoise;
+            box-sizing: content-box;
+        }
+        #bb{
+            background-color: green;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="cb">
+        content-box
+    </div>
+    <div class="box" id="bb">
+        border-box
+    </div>
+
+    
+</body>
+</html>

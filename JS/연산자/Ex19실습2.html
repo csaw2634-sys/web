@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    // 모든 오렌지를 남김없이 담을 수 있는 박스의 총 개수를 구하시오
+    // ex) 
+    // 한 박스에 담을 수 있는 오렌지 : 5 (변수명 : box)
+    // 현재 가지고 있는 오렌지 : 31 (변수명 : orange)
+    // 필요한 박스의 수 : 7 (5개를 꽉채운 상자 6 + 1개를 담는 상자 1개)
+    <script>
+   
+        let box = prompt('한 박스에 담을 오렌지수를 입력하세요')
+        let orange = prompt('현재 오렌지의 개수를 입력해주세요!')
+        let count_box = orange / box;
+        console.log('한 박스에 담을 오렌지 수 :' + box);
+        console.log('현재 오렌지 개수 : '+orange);
+        console.log(orange % box != 0 ? '필요한 박스의 수 : '+(parseInt(count_box)+ 1) : '필요한 박스의 수 : '+parseInt(count_box));
+
+
+        console.log(orange % box === 0 ? '필요한 박스의 수 : ' + (parseInt(count_box)) : '필요한 박스의 수 :' +(parseInt(count_box)+1));
+
+    </script>
+</body>
+</html>

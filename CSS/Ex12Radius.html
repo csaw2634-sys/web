@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            간단하게 글자 크기단위 알아보기
+
+            1. px : 고정된 css 단위
+            - 기본적인 단위, width : 100px -> 너비가 100px
+            2. % : 기준이 되는 크기에 대한 비율
+            - 만약 부모의 너비가 500px이고 자식의 너비가 50%라면 자식의 너비는 250px
+            3. em : 해당 요소의 글꼴 크기를 기준으로 계산
+            - 적용되는 속성과 요소의 글꼴 크기에 따라 계산
+            4. rem : 최상위 html 요소의 글꼴 크기를 기준으로 계산
+            - 만약 기본 글꼴 크기가 16px이라면, 2rem => 32px
+        */
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        #redbox{
+            background-color: red;
+            /* 왼쪽 위 모서리를 둥글게 */
+            border-top-left-radius: 20px;
+            /* 오른쪽 아래 모서리를 둥글게 */
+            border-bottom-right-radius: 50%;
+        }
+
+        #bluebox{
+            /* 배경색 넣어주기 */
+            background-color: turquoise;
+            /* 완전한 원모양 만들기 */
+            border-radius: 50%;
+        }
+
+        #greenbox{
+            background-color: green;
+
+            /* 한번에 지정해주기 */
+            border-radius: 50%;
+        }
+
+        #graybox{
+            background-color: gray;
+            /* 가로가 긴 타원만들기 */
+            padding-left: 100px;
+            padding-right: 100px;
+            /* padding : 0 100px */
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="redbox">box</div>
+    <div id="bluebox">box</div>
+    <div id="greenbox">box</div>
+    <div id="graybox">box</div>
+
+</body>
+</html>

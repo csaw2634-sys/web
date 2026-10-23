@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // setinterval()활용해서 타이머 구현하기
+
+        //setInterval(실행할 함수 , 시간(ms))
+        // 1초 -> 1000ms
+        
+        /* setInterval(() => {
+            console.log('1초마다 실행');
+        }, 1000); */
+
+        // while(true) vs setInterval()
+        // while -> 동기방식 -> 기능이 끝날 때까지 다음 작업을 못함
+        // JS는 싱글스레드 -> 한 번 들어가면 빠져나오지 못함 -> 브라우저 멈춤
+        /* setInterval(() => {
+            console.log('1초마다 실행');
+        }, 1000); */
+
+        // setInterval() -> 비동기 방식 -> JS가 ?초마다 이벤트가 일어날 수 있도록 
+        //                  실행시킬 함수를 예약만 해둠
+
+        // 시간 데이터가 setInterval()안에서 존재해야 
+        // 지속적으로 입력을 받고 연속적으로 출력이 가능함
+        setInterval(() => {
+            let today = new Date(); 
+            console.log(`${today.getHours()}시 ${today.getMinutes()}분 ${today.getSeconds()}초`)
+        },1000);
+    </script>
+</body>
+</html>

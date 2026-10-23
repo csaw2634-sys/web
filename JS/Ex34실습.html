@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1번 문제 : 빈 배열 array 생성 후 크기(length)를 출력하기
+        let array = [];
+        console.log('1번 문제 : ' +array.length);
+        /* 
+            let array=[];
+            console.log(`1번 문제 : ${array.legth}`)
+        */
+        // 2번 문제 : 0 ~ 4번 인덱스에 각각 (35, 73, 68, 82, 94) 저장하고 (slice활용)출력하기
+        array[0] = 35;
+        array[1] = 73;
+        array[2] = 68;
+        array[3] = 82;
+        array[4] = 94;
+        console.log('2번 문제 : ' + array.slice())
+        /* 
+            array.push(35);
+            array.push(73);
+            array.push(68);
+            array.push(82);
+            array.push(94);
+            
+        */
+        // 3번 문제 : 모든 데이터를 for문을 활용해서 출력하기
+        for(let i = 0; i < array.length; i++){
+            if(array[i]>=0){
+                console.log(array[i])
+            }
+        } 
+        /* 
+            for(let i = 0; i < 5; i++){
+                console.log(array[i]);
+            }
+            console.log(array[0]);
+            console.log(array[1]);
+            console.log(array[2]);
+            console.log(array[3]);
+            console.log(array[4]);
+        */
+        // 4번 문제 : 3번 요소(68)을 100으로 수정 후 모든 데이터 (slice활용)출력하기
+        array[2] = 100;
+        console.log('4번 문제 : ' + `${array.slice()}`)
+        /* 
+            array[2] = 100;
+            console.log(`4번 문제 : ${array.slice()}`);
+        */
+        // 5번 문제 : 2번 요소(73)의 데이터를 삭제 후 모든 데이터 (slice활용)출력하기
+        array.splice(1,1);
+        console.log('5번 문제 : '+ `${array.slice()}`)
+        /* 
+            array.splice(1, 1);
+            console.log(`5번 문제 : ${array.slice()}`);
+        */
+    </script>
+</body>
+</html>

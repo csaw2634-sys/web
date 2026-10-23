@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>웹을 만드는 언어들</h1>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+    </ul>
+
+    <!-- 페이지 이동 없이 배경색 바꾸기 -->
+     <h1><u>배경색 바꾸기</u></h1>
+    <button onclick="yellow()">노란색</button>
+    <button onclick="back()">돌아가기</button>
+
+    <!-- JavaScript 언어를 사용하기 위해서는 Script 태그 안에서 작성하기! -->
+    <script>
+        // 기능적인 코드를 작성하는 공간!
+        // document : 현재 문서
+        // queryselector : HTML의 클래스명, 아이디값, 태그 등으로 요소를 가져올 때 사용
+        // style : CSS
+        // backgroundcolor : 배경색
+        // color : 글자색
+        function yellow(){
+            document.querySelector('body').style.backgroundColor = 'yellow';
+            document.querySelector('body').style.color = 'blue';
+             }
+
+        function back(){ //배경색을 검정색으로 바꾸기
+            document.querySelector('body').style.backgroundColor = 'black';
+            //u태그 안에 있는 텍스트를 핑크색으로 바꾸기
+            document.querySelector('body > h1:nth-child(3) > u').style.color = 'pink';
+            // document.querySelector('u').style.color = 'pink';
+        }
+        
+
+    </script>
+
+
+
+</body>
+</html>

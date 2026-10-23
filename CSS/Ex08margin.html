@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            margin 속성 : 요소의 테두리 바깥쪽에 여백을 주는 속성
+
+            margin : 10px 10px 10px 10px;
+             => 상 -> 우 -> 하 -> 좌 (시계방향)순서로 적용
+
+            margin : 10px 10px 10px;
+             => 상 / 좌우 / 하 순서로 적용
+
+            margin : 10px 10px;
+             => 상하 / 좌우 순서로 적용
+            
+            margin : 10px;
+             => 모든 방향에 적용
+
+            margin : auto;
+            => 부모요소의 가운데 위치 
+
+            **margin 상쇄 효과(현상)**
+            => 두 개 이상의 block 요소의 상하 마진이 겹칠 때
+               가장 큰 마진으로 결합되는 현상
+
+        */
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        #box1{
+            background-color: red;
+            margin-right: 100px;
+        }
+        #box2{
+            background-color: yellow;
+            margin-left: 100px;
+        }
+        #box3{
+            background-color: orange;
+            margin-left: 200px;
+        }
+        #box4{
+            background-color: blue;
+            margin-left: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"> </div>
+    <div id="box2"> </div>
+    <div id="box3"> </div>
+    <div id="box4"> </div>
+
+</body>
+</html>

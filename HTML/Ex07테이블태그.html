@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        table 병합
+        colspan: 셀 병합(가로 합치기)
+        rowspan: 행 병합(세로 합치기)
+        테이블 태그 : table, tr, th, td, caption
+        table : 웹 페이지에 표를 표현
+        caption : 테이블의 제목
+        tr : 행(가로)
+        th : 열 제목
+        td : 열(데이터)
+    -->
+    <table border="1">
+    <caption> 프로그래밍 언어</caption>    
+    <tr>
+        <th>분야</th>
+        <th>언어</th>
+        <th>난이도</th>
+    </tr>
+    <tr>
+        <td>Front</td>
+        <td>HTML</td>
+        <td>하</td>
+    </tr>
+    <tr> 
+    <td>Front</td>
+    <td>CSS</td>
+    <td>중하</td>
+    </tr>
+    </table>
+<table border="1">
+<caption>
+    강좌정보
+</caption>
+<tr bgcolor="yellow">
+    <th>과목명</th>
+    <th colspan="2">난이도/중요도</th>
+    <!-- <th>중요도</th> -->
+</tr>
+<tr>
+<td>HTML</td>
+<td> *</td>
+<td rowspan="2">*****</td>
+</tr>
+<tr>
+    <td>CSS</td>
+    <td>***</td>
+    <!-- <td>*****</td> -->
+</tr>
+</table>
+</body>
+</html>

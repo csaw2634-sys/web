@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*  증감연산자(단항연산자)
+         숫자데이터를 가진 변수 앞 또는 뒤에 (++,--)를 붙여 1증가 혹은 1감소 시키는 연산자
+         (++,--)를 앞에 붙이면 전위증감연산자, 뒤에 붙이면 후위증감연산자
+         전위증감연산자 : 식 계산하고 출력
+         후위증감연산자 : 출력하고 식 계산 */
+        let num = 5;
+        console.log(++num); // 6
+        console.log(num++); // 6
+        console.log(num); // 7
+        console.log(num--);// 7
+        console.log(num);// 6
+        console.log(--num);// 5
+
+
+        let num1 = 10;
+        let result = num1-- + 5 + --num1;
+        console.log(num1, result); 
+    
+    </script>
+</body>
+</html>

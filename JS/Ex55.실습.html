@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name" placeholder="이름 입력">
+    <button onclick="printName()">확인</button>
+    <h2 id="result"> </h2>
+    <script>
+        function printName(){
+        // input태그의 입력값 가져오기
+        let name = document.getElementById('name').value;
+        // id값이 result인 요소를 찾아서 ~~님 환엽합니다! 출력하기 
+        let end = document.getElementById('result')/* .innerText = `${name}님 환영합니다~!`} */;
+        end.innerText = `${name}님 환영합니다!`}
+        
+         
+    </script>
+</body>
+</html>

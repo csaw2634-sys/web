@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            1. 전체 선택자(*) : 모든 요소를 선택
+            2. 태그 선택자(태그 이름) : 특정 태그를 선택
+            3. 클래스 선택자(.클래스이름) : 특정 태그를 묶어서 선택
+            4. 아이디 선택자(#아이디이름) : 특정 태그에 고유값을 부여해서 선택
+            
+            ** 명시도 (우선 순위)**
+            선택자는 범위가 좁을수록 우선순위가 높다!
+            우선순위 : id(100) > class(10) > tag(1) > *(0)
+            
+            ** 선택자를 구분해서 지정해줘야하는 경우**
+            => 클래스 / 아이디
+        
+            클래스 => 중복 가능, 재사용성이 뒤어남
+            아이디 => 중복 불가능, 한 문서당 1번만 사용
+                    로고, 검색창, 상단바 같은 고유한 디자인
+            */
+
+        /* 
+            !important : CSS의 우선순위를 강제로 높여 해당 선언을 
+            무조건 적용하게 만드는 키워드
+            **주의사항**
+             - 남용할 경우, 명시도(우선순위) 관리가 무너져서 유지보수가 어려워진다!
+             - 제한적인 상황에서 정말 다급한 경우에만 사용해야한다! 
+        */
+        *{
+            color: blue;
+        }
+        h1{
+            color:black;
+        }
+        li{
+            color: pink;
+        }
+
+        .menu{
+            color: gray;
+        }
+        .aa{
+            color: goldenrod;
+        }
+        #dinner{
+            color: olivedrab;
+        }
+    </style>
+</head>
+
+<body>
+        <h1>오늘의 저녁 메뉴는?</h1>
+    <p>조건을 확인하고 골라주세요</p>
+    <ul>
+        <li>든든한 음식</li>
+        <li>면은 안 먹고 싶어요</li>
+        <li>생선보다 고기가 좋아요</li>
+    </ul>
+
+    <h1>저녁 메뉴 후보</h1>
+    <ol>
+        <li class="menu aa">파스타</li>
+        <li class="menu aa" id="dinner">삼겹살</li>
+        <li class="menu">초밥</li>
+    </ol>    
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         // 1. 기본 자료형
+         
+         
+         
+         // 자료형 - 숫자형(number)
+         // - 정수 : -2, -1, 0, 1, 2, ...
+         // - 실수 : 1.5, 2.4, 3.14, ...
+         let num1 = 10;
+         let num2 = 30;
+         let num3 = 3.14;
+         let num4 = 6.25;
+
+         console.log(num1, num2, num3, num4);
+         //실제 데이터 타입 확인하기
+         console.log(typeof(num1));
+         console.log(typeof(num3));
+
+         // 자료형 -문자열(string)
+         // - 작은따옴표(''), 큰따옴표("")로 표현
+
+         let str1 = 'hello Javascript!';
+         let str2 = 'happy hacking';
+         let str3 = 'front-end language';
+
+         console.log(str1);
+         console.log(str2);
+         console.log(str3);
+         console.log(typeof(str1));
+        
+        // 자료형 - 논리형(boolean)
+        // 참(true) 혹은 거짓(false)
+        let islogin = true;
+        let isstate = false;
+
+        console.log(islogin);
+        console.log(typeof(islogin));
+        console.log(isstate);
+        console.log(typeof(isstate));
+
+        // 자료형 - undefined, null
+        // - undefined : 데이터의 자료형, 값 모두 없는 경우에 표현
+        // - null : 의도적으로 값을 비어있는 상태로 표현한 것 -> 객체 형태로 저장
+
+        // 변수가 선언은 됐지만 자료형도 없고 값도 없는 상태
+        let empty;
+        console.log(empty);
+
+        // 변수를 선언한 후 의도적으로 null(객체)를 저장
+        let isNull = null;
+        console.log(isNull);
+
+        console.log(typeof(empty), typeof(isNull));
+
+        // 2. 참조 자료형
+
+        // 자료형 - 배열(array) 
+        // - 여러개의 데이터를 하나의 공간에 저장하는 형태 -> [] 로 표현
+
+        let array = [];
+        let array1 = [1, 2, 3];
+
+        console.log(array,array1);
+
+        // 자료형 - 객체(object)
+        // 여러 자료형의 데이터들을 하나로 묶어 표현
+        // 형태(JSON -> JavaScript Object Notation)
+        /* 
+        {
+           key : value
+           key2 : value
+        }
+        */
+        let obj = {
+            name : '김경민',
+            age : 22,
+            iscold : true
+        } 
+        console.log(obj);
+
+
+    </script>
+</body>
+</html>

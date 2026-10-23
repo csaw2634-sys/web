@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            주의할 점 : flex는 별도의 CSS 속성이 아닌 display의 속성 값
+            - display: flex;
+
+            알아야 할 개념 2가지
+            1. container : flex의 영향을 받는 전체공간, 부모요소
+            2. item : container 안에서 배치되는 자식요소
+        */
+        .container{
+            
+            /* 기본적으로 가로배치 및 정렬 */
+            display: flex;
+            
+            /* 
+            flex-direction : 아이템의 배치 방향 
+            - row : 가로배치(기본값)
+            - row-reverse : 가로 역순 배치
+            - column : 세로배치
+            - column-reverse : 세로 역순 배치    
+            */
+
+            flex-direction: row;
+            /* 
+            flex-wrap : 아이템들이 컨테이너를 넘어갈 때 줄바꿈을 할건지 안할건지 결정하는 속성
+            - nowrap : 줄바꿈x, 한 줄에 들어갈 수 있도록 줄어듦(기본값)
+            - wrap : 줄바꿈 O
+            - wrap-reverse :  역순으로 줄바꿈
+
+            */
+            /* width: 400px;
+            flex-wrap: wrap-reverse; */
+
+            /* 
+                justify-content : 메인축 방향 아이템 정렬 속성
+                1. flex-start : 시작점 정렬
+                2. flex-end : 끝점 정렬
+                3. center : 가운데 정렬
+                4. space-between : 시작점과 끝점이 양쪽에 붙어서 정렬이 되고, 아이템 사이 간격이 동일하게 배치됨
+                5. space-around : 양 끝에 간격이 생기며, 아이템 사이의 간격은 양 끝 간격의 2배
+                6. space-evenly : 양 끝과 아이템 사이의 간격이 동일
+                 
+            */
+
+            justify-content: space-evenly;
+
+            /* 
+            align-items : 교차축(메인축의 수직축)의 아이템 정렬
+            flex-start, flex-end, center
+            
+            */
+            height: 200px;
+            align-items: flex-start;
+
+            background-color: orange;
+
+
+        }
+        .item{
+            background-color: crimson;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="item">BOX1</div>
+        <div class="item">BOX2</div>
+        <div class="item">BOX3</div>
+        <div class="item">BOX4</div>
+        <div class="item">BOX5</div>
+        <div class="item">BOX6</div>
+    </div>
+   
+
+</body>
+</html>

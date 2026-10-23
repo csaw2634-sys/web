@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = 'h1Tag'>DOM 사용하기</h1>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+    </ul>
+
+    <p class = 'dom_p'>벌써 월요일!</p>
+    <p class = 'dom_p'>시간 빠르다..</p>
+
+    <input type="text" name="prac" value="확인1">
+    <input type="text" name="prac" value="확인2">
+    <script>
+        // DOM(Document Object Model)
+        // -> 문서를 객체 형태로 쪼개주는 형식
+        // document : 현재 작성중인 문서 객체 모델
+        // . : 접근을 의미
+        // getElementById() : 아이디값을 통해서 요소를 가져오겠다.        
+        let h1Element = document.getElementById('h1Tag');
+        console.log(h1Element);
+
+        //.querySelector(선택자);
+        // 해당 선택자로 선택된 요소 반환
+        // .querySelectorAll(선택자);
+        // 해당 선택자로 선택된 모든 요소 반환(유사 배열)
+        let liElement = document.querySelectorAll('li');
+        console.log(liElement);
+        
+        // textContent : 요소 안의 내용을 가지고 오는 속성
+        /* console.log(liElement[0].textContent) */
+        
+        //문제
+        //for문을 활용해서 liElement 안에 모든 텍스트 출력하기
+        for(i = 0; i< liElement.length; i++){
+            console.log(liElement[i].textContent);
+        };
+        // textContent는 css요소 반영 x
+        // innerText는 css요소 반영 o
+        // getElementByTagName
+        // 태그 이름으로 요소를 가져오겠다.
+        let get_p = document.getElementsByTagName('p');
+        console.log(get_p);
+        console.log(get_p[0].innerText);
+        console.log(get_p[1].innerText);
+
+        // getElementsByClassName
+        // 클래스명으로 요소를 가져오겠다.!
+        // class명이 dom_p이면서 2번째 요소의 텍스트만 콘솔창에 출력하기!
+        let get_c = document.getElementsByClassName('dom_p');
+        console.log(get_c[1].innerText);
+
+        // getElementsByName
+        // name값으로 요소를 가져오겠다.
+        let get_prac = document.getElementsByName('prac');
+        for(let i = 0; i < get_prac.length; i++){
+            console.log(get_prac[i].value);
+        }
+        
+        // querySelector
+        // 선택자를 활용해서 요소를 가져오겠다.
+        let get_h1 = document.querySelector('#h1Tag');
+        console.log(get_h1)
+
+    </script>
+</body>
+</html>

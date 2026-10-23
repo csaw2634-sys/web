@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 형변환 : 기존 자료형을 다른 자료형으로 변환하는 기법
+
+        /* 강제 형변환
+         자료형 -> 숫자형
+         Number() : 정수/ 실수로 변환
+         parseInt() : 정수로 변환
+         parseFloat() : 실수로 변환
+        */
+        console.log(10 + '10'); // '1010' -> 자동 형 변환
+        console.log(10 + Number('10')); // 20
+        console.log(10 + parseInt('10')); // 20
+        console.log(10 + parseFloat('10.5')); // 20.5
+        console.log(10 + parseInt('10.5'));// 20
+
+
+        /* 자료형 -> 문자열 
+         String(변수명), 변수명.toString()
+        */
+        let num = 10;
+        console.log(typeof(String(num)));
+
+        console.log(typeof(num.toString()));
+
+        // 변수명.toFixed() : 소수점자리를 잘라주는 함수 -> 문자열로 반환
+        let num2 = 1.23456;
+        console.log(num2.toFixed(2));
+        console.log(typeof(num2.toFixed(2)));
+
+        // 자료형 -> 논리형
+        // Boolean()
+
+        console.log(Boolean(200));//true
+        console.log(Boolean(1)); //true
+        console.log(Boolean(0)); //false
+
+        console.log(Boolean('왕'));//true
+        console.log(Boolean(null));//false
+        console.log(Boolean(undefined));//false
+        
+        
+
+    </script>
+</body>
+</html>

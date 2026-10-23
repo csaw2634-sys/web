@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            1. display: block;
+            종류 : div, p태그, h1~h6, ul, ol, li 등
+            무조건 가로로 한 줄의 영역을 차지하는 속성
+            width , height, margin, padding 값 설정 가능
+            
+            2. display: inline;
+            종류 : span, a 등
+            내가 담은 내용(콘텐츠)까지만 크기로 삼는 속성
+            width, height 값 설정 불가능
+
+            ** inline 요소들 사이의 간격은 띄어쓰기 간격으로
+            편집기 상의 공백 적용된 것
+
+            3. display: inline-block
+            inline처럼 줄바꿈없이 옆에 붙을 수는 있지만
+            block처럼 width, height, margin, padding 값 설정 가능
+
+            4. display: none
+            화면에 출력된 요소를 안보이게끔 처리
+        */
+        p,span{
+            width: 200px; height: 200px;
+        }
+        p{
+            background-color: aqua;
+            display: inline;
+        }
+        span{
+            background-color: turquoise;
+            display: block;
+        }
+        h1{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p>p태그1</p>    
+    <p>p태그2</p>    
+    <p>p태그3</p>  
+        
+    <span>span태그1</span>
+    <span>span태그2</span>
+    <span>span태그3</span>
+
+
+    <h1>none 살펴보기</h1>
+</body>
+</html>

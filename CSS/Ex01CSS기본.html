@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 외부 스타일 시트 불러오기 -->
+    <!--
+         스타일 선언 방식
+         ** 외부 방식 **
+         - head 태그 내에 link 태그 작성
+         - rel : 무슨 관계인지 
+         - href : 연결할 파일이 어디있는지
+    -->
+     <link rel="stylesheet" href="./Ex00외부CSS.css">
+    <style>
+        /* CSS 주석 모양 */
+        /* 
+            CSS의 기본 문법
+            선택자 {
+                    속성 : 값;
+            }
+        *주의사항*
+         - 값 입력한 다음에 ;를 반드시 적어야 한다.
+         - 선택자 안에 다른 선택자는 작성 불가능
+         ex) p{
+                color : red;
+                h1{
+                color : red;
+                }
+         }
+                => 사용 불가
+        */
+        h1 {
+            color: red;
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- 
+        [스타일 적용 우선 순위]
+        1. 인라인 스타일
+        2. 내부/ 외부 (태그 순서에 따라 변함)
+    -->
+    <h1 style="color: orange; ">첫번째 h1</h1>
+
+    <p> 첫번째 p </p>
+</body>
+</html>

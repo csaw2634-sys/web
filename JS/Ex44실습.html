@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수표현식, 화살표함수 예제
+        // addNumber라는 상수를 만들어서 두 숫자를 매개변수(num1,num2)로 받기
+        // 콘솔창에 다음과 같이 출력하기
+        // -> 10과 20의 더한 결과 : 30
+
+        function addNumber(num1, num2){
+            console.log()
+        }
+        
+        
+        // 함수 addNumber1 표현식 버전
+        const addNumber1 = function(num1,num2){
+            console.log(`${num1}과 ${num2}의 더한 결과 : ${num1+num2}`)
+           
+        }
+       addNumber1(10,20)
+        
+        // 화살표addNumber2 함수 버전
+        const addNumber2 = (num1,num2) => console.log(`${num1}과 ${num2}의 더한 결과 : ${num1 +num2}`)
+    
+        addNumber2(10,20);
+    </script>
+</body>
+</html>

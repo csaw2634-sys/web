@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 비교연산자
+             >, >=. <, <=, ==, !=, ===, !==
+            피연산자 사이의 크기비교 연산자로 true or false값을 반환
+         */
+        let num1 = 3;
+        let num2 = 7;
+        let num3 = '3';
+
+        console.log(num1 > num2);
+        console.log(num1 <= num2);
+        console.log(num1 == num3);// 3 == '3' -> true
+        console.log(num2 >= num3);// 7>='3' -> true
+        console.log(num1 === num3);// 3 === '3' -> false
+
+        // == vs ===
+        // 1. == (동등비교연산자)
+        // 값만 비교하기 때문에 비교하기 전에 값을 자동형변환 해주고 비교함
+        // js가 알아서 타입을 바꾼 후 비교하기 때문에 예상 못한 결과가 나올 수 있음
+        console.log(10 =='10'); // true('10' -> 숫자 10)
+        console.log(0 == false); // true(false -> 숫자 0)
+        console.log(null == undefined); // true(서로 같다고 판단)
+
+        // 2. === (일치비교연산자)
+        // 값과 데이터 타입까지 모두 비교
+        // 형변환 하지 않음, 타입이 다르면 무조건 false
+        console.log(10 ==='10'); 
+        console.log(0 === false);
+        console.log(null === undefined);
+        console.log(10 === 10);
+
+        // 실무에서는 ==보다는 === 사용을 훨씬 많이쓰고 권장한다.
+        // (''==0), ('0'==false),([]==0) -> true
+
+        // ==은 언제 사용할까??
+        // -> 특정 상황에서 의도적으로 사용
+        // ex) 넘어와야하는 데이터가 있는데 비어있을 때!
+        if(data == null){
+            console.log('데이터 안넘어옴');
+        }
+    </script>
+</body>
+</html>

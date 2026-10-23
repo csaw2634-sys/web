@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+    <script>
+        // 논리 연산자
+        // 주어진 논리를 판단하여 true or false 값을 반환
+
+
+        // 1. Not연산자(!) : 논리값 혹은 논리식 앞에 '!'기호를 붙여 기존값을 반대로 반환
+        let num1 = 5;
+        let num2 = 7;
+
+        console.log(!(num1<num2));
+
+        // 2. and연산자(&&) : 곱 연산자라고도 하며, 두 논리값 혹은 논리식이 모두 true인 경우에
+        //                   최종값을 true로 반환하는 연산자
+        console.log(3>2 && 15<10); // false
+        console.log( 3>2 && 15>10 ); // true
+
+        // 3. or연산자(||) : 합 연산자라고도 하며, 두 논리값 혹은 논리식이 모두 false인 경우에
+        //                  최종값을 false로 반환하는 연산자
+        console.log( 3>2 || 15<10 ); // true
+        console.log( 3<2 || 15<10 ); // false
+
+
+
+
+
+    </script>
+</body>
+</html>

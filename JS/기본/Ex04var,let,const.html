@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var : 재선언O, 재할당O
+        var name; // 선언
+        name = '김경민';
+        name = '손준수';
+        var name = '권은솔'; // 재선언
+        
+        //let : 재선언X, 재할당O
+        let name2 = '이주희';
+        name2 = '손준수';
+        //Uncaught SyntaxError: Identifier 'name2' has already been declared (at Ex04var,let,const.html:19:13)
+        // -> 'name2'는 이미 선언되어있다. 사용 불가하다.
+        //let name2;
+        
+        // const(상수) : 재선언X, 재할당X
+        const name3 = '김경민';
+        // Uncaught TypeError: Assignment to constant variable.
+        // -> 상수에 재할당 하려한다. 불가하다.
+        // name3 = '김';
+        // const name3 = '김';
+        
+        console.log(name3);
+        
+
+
+    </script>
+</body>
+</html>

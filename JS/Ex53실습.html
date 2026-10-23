@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="hi">안녕하세요</h1>
+
+    <button onclick="changeText()">변경하기</button>
+    <button onclick="resetText()">되돌리기</button>
+
+    <script>
+        // 변경하기 버튼 클릭 시 id값이 'hi'인 요소를 찾아서 텍스트를
+        // 안녕하세요 -> 반갑습니다로 변경
+        let hi = document.getElementById('hi');
+        const changeText = () => {
+            hi.innerText = '반갑습니다.';
+        };
+
+        // 되돌리기 버튼 클릭시 id값이 'hi'인 요소를 찾아서 텍스트를
+        // 반갑습니다 -> 안녕하세요로 변경
+        const resetText = () => {
+            hi.innerText = '안녕하세요.';
+        };
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            position : 요소의 위치를 배치하는 속성 
+            - top, bottom, left, right 속성과 같이 사용
+
+        */
+
+        *{
+            /* 기본적인 여백(8px)이 들어가 있기 때문에 초반에 아래처럼 설정해주면 좋음 */
+            padding: 0;
+            margin: 0;
+        }
+
+        div{
+            width: 100px;
+            height: 100px;
+        }
+
+        #redbox{
+            /* 
+                (1) static : 정적인 
+                  - position의 기본값이 static이다!
+                  - 만약 앞에 다른 요소가 있다면 그 바로 아래에 배치(기본적인 배치흐름에는 참여)
+                  - 위치 속성 비활성화
+            */
+            background-color: red;
+            position: static;
+            top: 30px;
+        }
+
+        #bluebox{
+            background-color: blue;
+
+            /* 
+                (2) relative : 상대적인
+                기준 : 본인이 원래 있던 위치
+                  - 위치 속성 활성화
+            */
+            position: relative;
+            top: 40px;
+            left: 40px;
+        }
+
+        #greenbox{
+            background-color: green;
+
+            /* 
+                (3)absolute : 절대적인
+                  - 일반적인 문서의 배치 흐름에서 벗어나서 본인만의 별도의 위치를 지정함
+                  - 위치 속성 활성화
+            
+            */
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        #graybox{
+            background-color: gray;
+
+            /* 
+                (4) fixed : 고정된
+                  - 스크롤을 해도 화면(브라우져)에 같은 위치에 배치
+                  - 일반적인 문서 배치 흐름에서 벗어남, 기준 : 브라우져 화면(viewport)
+                  - 위치 속성 활성화
+            */
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div> </div>
+  
+    <div id="redbox">box</div>
+    <div id="bluebox">box</div>
+    <div id="greenbox">box</div>
+    <div id="graybox">box</div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+    <div> </div>
+</body>
+</html>

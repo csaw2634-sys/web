@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 함수 선언문
+        function add(num1,num2){
+            return num1 + num2;
+        }
+
+        console.log(add(4,2))
+
+        // 2. 함수 표현식
+        const addNumber = function(num1,num2){
+            return num1 + num2;
+        }
+
+        // 상수명(매개변수)
+        console.log(addNumber(4,5));
+
+        // 3. 화살표 함수 
+        const addNum = (num1,num2) => {
+            return num1 + num2 
+        }
+        // 실행문이 return 한 줄일 때 return키워드와 {중괄호} 생략가능
+        const addNum2 = (num1,num2) =>  num1 + num2
+        
+        console.log(addNum(3,5));
+    </script>
+</body>
+</html>

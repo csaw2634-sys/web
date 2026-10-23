@@ -1,0 +1,71 @@
+﻿drama_name_kr,drama_name,drama_year,drama_network,title,author,platform,genre,age,naver_rating,completed,en_views,en_subscribers,en_likes,webtoon_source,info_source
+D.P.,D.P.,2021,Netflix,D.P 개의날,김보통,네이버,"스토리, 드라마",15세 이용가,9.91,True,,,,태그,"origin_clean, naver.csv"
+Dr. 브레인,Dr. Brain,2021,Apple TV+,Dr.브레인,김지윤,카카오페이지,"스릴러, 공포, 미스테리",19세 이용가,6.8,True,,,,직접 추가,
+간 떨어지는 동거,My Roommate Is a Gumiho,2021,"iQiyi, tvN",간 떨어지는,나,네이버,"스토리, 로맨스",전체연령가,9.97,True,22402276.0,335169.0,2912736.0,태그,"origin_clean, naver.csv, webtoon_originals_en"
+경이로운 소문,The Uncanny Counter,2020,"Netflix, OCN",경이로운 소문,장이,다음,"스토리, 액션",15세 이용가,10,True,,,,직접 추가,"origin_clean, webtoon_collect_clean"
+계룡선녀전,Tale of Fairy,2018,tvN,계룡선녀전,돌배,네이버,"스토리, 드라마",전체연령가,9.98,True,,,,태그,naver.csv
+계약우정,How to Buy a Friend,2020,KBS2,계약우정,권라드,네이버,드라마,15세 이용,9.5,True,,,,태그,네이버 크롤링
+구해줘,Save Me,2017,OCN,세상 밖으로,조금산,다음,"스토리, 스릴러",15세 이용가,10,True,,,,태그,"origin_clean, webtoon_collect_clean"
+김비서가 왜 그럴까,What's Wrong with Secretary Kim,2018,tvN,김비서가 왜 그럴까,정경윤 / 김명미,카카오,"스토리, 로맨스",전체연령가,9.9,True,,,,태그,"origin_clean, webtoon_collect_clean"
+나빌레라,Navillera,2021,"Netflix, tvN",나빌레라,HUN / 지민,다음,"스토리, 드라마",전체연령가,10,True,,,,태그,"origin_clean, webtoon_collect_clean"
+내 아이디는 강남미인,Gangnam Beauty,2018,jTBC,내 ID는 강남미인! - ...,기맹기,네이버,"에피소드, 로맨스",12세 이용가,9.96,True,15383583.0,363524.0,1604876.0,태그,"webtoon_originals_en, naver.csv"
+내과 박원장,Dr. Park's Clinic,2022,"tvN,tving",내과 박원장,장봉수,네이버,"스토리, 드라마",전체연령가,9.92,True,,,,태그,naver.csv
+내일,Tomorrow,2022,"MBC, Netflix",내일,라마,네이버,"옴니버스, 드라마",전체연령가,9.97,False,4318445.0,156214.0,585876.0,직접 추가,"origin_clean, naver.csv, webtoon_originals_en"
+냄새를 보는 소녀,A Girl Who Sees Smells,2015,SBS,냄새를 보는 소녀,만취,네이버,"스토리, 드라마",전체연령가,9.97,True,6505961.0,154784.0,941712.0,직접 추가,"naver.csv, webtoon_originals_en"
+닥터 프로스트,Dr. Frost,2014,OCN,닥터 프로스트 시즌 1~2,이종범,네이버,"옴니버스, 드라마",전체연령가,9.95,True,43575099.0,426280.0,3628503.0,태그,"webtoon_originals_en, naver.csv"
+당신의 하우스헬퍼,Your House Helper,2018,KBS2,당신의 하우스헬퍼,황인뢰,카카오,드라마,전체연령가,10,True,,,,직접 추가,
+독고 리와인드,Dokgo Rewind,2018,"Wavve,카카오페이지",독고 리와인드,Meen/백승훈,카카오,액션,15새 이용가,9.7,True,,,,태그,
+동네변호사 조들호,"My Lawyer, Mr. Jo",2016,KBS2,동네변호사 조들호 시즌1,해츨링,네이버,"스토리, 드라마",12세 이용가,9.94,True,,,,태그,naver.csv
+동네변호사 조들호2: 죄와 벌,"My Lawyer, Mr. Jo 2: Crime and Punishment",2019,KBS2,동네변호사 조들호 시즌2,해츨링,네이버,"스토리, 드라마",12세 이용가,8.01,True,,,,태그,naver.csv
+라스트,Last,2015,jTBC,라스트,강형규,다음,"액션,스릴러,드라마",15세 이용가,10,True,,,,직접 추가,
+루갈,Rugal,2020,"Netflix, OCN",루,릴매,진코믹스,액션,15세 이용가,9.7,True,,,,태그,
+마음의 소리,The Sound of Your Heart,2016,Naver TV Cast,마음의 소리,조석,네이버,"에피소드, 개그",전체연령가,9.7,True,34669805.0,160988.0,2469220.0,태그,"origin_clean, webtoon_collect_clean, webtoon_originals_en"
+멀리서 보면 푸른 봄,"At a Distance, Spring Is Green",2021,"iQiyi, KBS2, Viki",멀리서 보면 푸른 봄,지늉,다음,"스토리, 드라마",12세 이용가,7.4,True,,,,태그,"origin_clean, webtoon_collect_clean"
+메모리스트,Memorist,2020,tvN,메모리스트,재후,다음,"스토리, 스릴러",전체연령가,7.6,True,,,,태그,"origin_clean, webtoon_collect_clean"
+멜로홀릭,Meloholic,2017,"OCN, Oksusu, Viki",멜로홀릭,팀겟네임,네이버,"스토리, 스릴러",전체연령가,9.93,True,,,,태그,naver.csv
+며느라기,"No, Thank You",2020,Daum Kakao TV,며느라기,수신,카카오,일상,전체이용가,8.2,True,,,,태그,
+모범택시,Taxi Driver,2021,SBS,모범택시,까를로스 / 크크재진,네이버,"스토리, 스릴러",18세 이용가,9.9,True,,,,태그,"origin_clean, naver.csv"
+미생,Misaeng: Incomplete Life,2014,tvN,미생,윤태호,다음,"스토리, 드라마",전체연령가,8.5,True,,,,태그,"origin_clean, webtoon_collect_clean"
+부암동 복수자들,Avengers Social Club,2017,tvN,부암동 복수자들,엄지숙,다음,"스토리, 드라마",12세 이용가,7.8,True,,,,직접 추가,"origin_clean, webtoon_collect_clean"
+상상고양이,Imaginary Cat,2015,MBC every1,상상고양이,,다음,일상,전체연령가,6.6,True,,,,태그,
+송곳,Songgot: The Piercer,2015,jTBC,송곳 1~3부,최규석,네이버,"스토리, 드라마",12세 이용가,9.96,True,,,,태그,naver.csv
+술꾼도시여자들,"Work Later, Drink Now",2021,tvN,술꾼도시처녀들,미깡,다음,"에피소드, 일상",15세 이용가,9.8,True,,,,태그,"origin_clean, webtoon_collect_clean"
+슈퍼대디 열,Super Daddy Yeol,2015,tvN,슈퍼대디 열,진효미/이상훈,네이버,드라마,전체이용가,7.8,True,,,,직접 추가,
+스위트홈,Sweet Home,2020,Netflix,스위트홈,김칸비 / 황영찬,네이버,"스토리, 스릴러",15세 이용가,9.97,True,272415531.0,3500910.0,19451212.0,태그,"origin_clean, naver.csv, webtoon_originals_en"
+싸우자 귀신아,"Bring It On, Ghost",2016,tvN,싸우자귀신아,임인스,네이버,"옴니버스, 드라마",12세 이용가,9.9,True,,,,태그,naver.csv
+쌉니다 천리마마트,Pegasus Market,2019,tvN,쌉니다 천리마마트,김규삼,네이버,개그,전체이용,9.9,True,,,,태그,네이버 크롤링
+쌍갑포차,Mystic Pop-up Bar,2020,"jTBC, Netflix",쌍갑포차,배혜수,다음,"스토리, 판타지",15세 이용가,10.0,False,,,,태그,"origin_clean, webtoon_collect_clean"
+아만자,Amanza,2020,Daum Kakao TV,아만자,김보통,다음,"스토리, 드라마",15세 이용가,8.3,True,,,,태그,"origin_clean, webtoon_collect_clean"
+아이템,Item,2019,MBC,아이템,"민형,김준석",카카오페이지,드라마,15세 이용,9.8,True,,,,태그,
+아직 낫서른,How to Be Thirty,2021,"Daum Kakao TV, Viki",아직 낫서른,혜원,카카오페이지,로맨틱 코미디,15세 이용가,9.8,False,,,,태그,
+안나라수마나라,The Sound of Magic,2022,Netflix,안나라수마나라,하일권,네이버,"스토리, 드라마",전체연령가,9.95,True,14075471.0,396486.0,983399.0,태그,"origin_clean, naver.csv, webtoon_originals_en"
+"알고있지만,",Nevertheless,2021,"jTBC, Netflix",[드라마원작] 알고있지만,정서,네이버,"스토리, 로맨스",15세 이용가,9.97,True,16780866.0,581047.0,1261808.0,태그,"webtoon_originals_en, naver.csv"
+애간장,My First Love,2018,OCN,애간장,"김희란,김병관",카카오페이지,로맨스,전체연령가,9.8,True,,,,태그,
+어쩌다 발견한 하루,Extraordinary You,2019,MBC,어쩌다 발견한 7월,무류,다음,"스토리, 로맨스",전체연령가,9.9,True,,,,태그,"origin_clean, webtoon_collect_clean"
+여신강림,True Beauty,2020,tvN,여신강림,야옹이,네이버,"스토리, 로맨스",12세 이용가,9.39,False,1036770677.0,7544404.0,55811283.0,태그,"origin_clean, naver.csv, webtoon_originals_en"
+연애혁명,Love Revolution,2020,"Daum Kakao TV, Viki",연애혁명,232,네이버,"스토리, 드라마",15세 이용가,9.86,False,,,,태그,naver.csv
+오렌지 마말레이드,Orange Marmalade,2015,KBS2,오렌지 마말레이드,석우,네이버,"스토리, 로맨스",12세 이용가,9.91,True,129399187.0,1036874.0,5118705.0,태그,"naver.csv, webtoon_originals_en"
+우리 집에 사는 남자,Sweet Stranger and Me,2016,KBS2,우리 집에 사는 남자,유현,다,"드라마, 가족",전체연령가,9.5,True,,,,직접 추가,
+우리 헤어졌어요,We Broke Up,2015,Naver TV Cast,우리 헤어졌어요,류채린,네이버,"스토리, 드라마",전체연령가,9.89,True,,,,태그,naver.csv
+우월한 하루,A Superior Day,2022,OCN,우월한 하루,팀 겟네임,네이버,"스토리, 스릴러",15세 이용가,9.94,True,,,,직접 추가,naver.csv
+운빨로맨스,Lucky Romance,2016,MBC,운빨로맨스,김달님,네이버,"스토리, 로맨스",전체연령가,9.96,True,,,,직접 추가,naver.csv
+유미의 세포들,Yumi's Cells,2021,tvN,유미의 세포들,이동건,네이버,"에피소드, 로맨스",12세 이용가,9.93,True,204264111.0,744846.0,20066115.0,태그,"origin_clean, naver.csv, webtoon_originals_en"
+이미테이션,Imitation,2021,"KBS2, Viki",,,,,,,,,,,직접 추가,
+이태원 클라쓰,Itaewon Class,2020,"jTBC, Netflix",이태원 클라쓰,광진,다음,"스토리, 드라마",15세 이용가,,,,,,태그,"origin_clean, webtoon_collect_clean"
+일단 뜨겁게 청소하라!!,Clean with Passion for Now,2018,jTBC,,,,,,,,,,,태그,
+저녁 같이 드실래요?,Dinner Mate,2020,"iQiyi, MBC",,,,,,,,,,,태그,
+조선로코 녹두전,The Tale of Nokdu,2019,KBS2,녹두전,혜진양,네이버,"스토리, 로맨스",전체연령가,9.98,True,,,,직접 추가,"origin_clean, naver.csv"
+좋아하면 울리는,Love Alarm,2019,Netflix,,,,,,,,,,,태그,
+죽어도 좋아,Feel Good to Die,2018,KBS2,,,,,,,,,,,태그,
+지금 우리 학교는,All of Us Are Dead,2022,Netflix,지금 우리,주동근,네이버,"스토리, 스릴러",18세 이용가,9.56,True,21311166.0,555861.0,1465841.0,직접 추가,"origin_clean, naver.csv, webtoon_originals_en"
+지옥,Hellbound,2021,Netflix,[드라마원작] 지옥,연상호 / 최규석,네이버,"에피소드, 스릴러",15세 이용가,9.83,True,3103516.0,228882.0,306456.0,태그,"naver.csv, webtoon_originals_en"
+징크스의 연인,Jinxed at First,2022,"KBS2, Viki",,,,,,,,,,,직접 추가,
+치즈인더트랩,Cheese in the Trap,2016,tvN,[드라마원작] 치즈인더트랩,순끼,네이버,"스토리, 로맨스",12세 이용가,9.98,True,161908606.0,1141037.0,10075837.0,태그,"naver.csv, webtoon_originals_en"
+킹덤,Kingdom,2019,Netflix,신의 나라,김은희 / 양경일,네이버,"스토리, 스릴러",18세 이용가,,,,,,태그,"origin_clean, webtoon_collect_clean"
+타인은 지옥이다,Hell Is Other People,2019,OCN,타인은 지옥이다,김용키,네이버,"스토리, 스릴러",15세 이용가,9.86,True,9506383.0,228582.0,909547.0,태그,"origin_clean, naver.csv, webtoon_originals_en"
+편의점 샛별이,Backstreet Rookie,2020,"iQiyi, SBS",,,,,,,,,,,태그,
+하백의 신부 2017,The Bride of Habaek,2017,tvN,,,,,,,,,,,직접 추가,
+하우 아 유 브레드,How Are U Bread,2020,"Naver TV Cast, Viki",,,,,,,,,,,태그,
+"하이드 지킬, 나","Hyde Jekyll, Me",2015,SBS,,,,,,,,,,,태그,
+호구의 사랑,Hogu's Love,2015,tvN,,,,,,,,,,,태그,
+후유증,Aftermath,2014,Naver TV Cast,후유증,김선권,네이버,"스토리, 스릴러",12세 이용가,9.37,True,,,,태그,naver.csv

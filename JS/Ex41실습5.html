@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 두 숫자(num1,num2)와 연산기호(op)를 입력받는 calculate(num1,num2,op) 함수 만들기
+        // calculate 함수 호출 시 연산값을 반환받아 콘솔창에 출력하기
+        // op 변수에 +, -, *, /를 입력받는다 
+        // 만약에 이외의 데이터를 입력시 alert창으로 '연산기호를 다시 입력해주세요' 띄우기
+        
+        // 두 숫자 입력받기
+        let num1 = parseInt(prompt('첫번째 숫자 입력'))
+        let num2 = parseInt(prompt('두번째 숫자 입력'))
+        let op = prompt('연산기호 입력')
+        // 함수 선언
+            function calculate(num1, num2, op){
+                if(op === '+'){
+                   return num1+num2;
+                }else if(op === '-'){
+                   return num1-num2;
+                }else if(op === '*'){
+                   return num1*num2;
+                }else if(op === '/'){
+                   return num1/num2;
+                }else{
+                  alert ('연산기호를 다시 입력해주세요');
+                }
+                
+        
+            }
+        
+
+        // 함수 선언
+        console.log(calculate(num1,num2,op))
+        
+    </script>
+</body>
+</html>

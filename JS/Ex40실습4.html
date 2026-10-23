@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // evenOdd() 함수를 선언하고
+        // 매개변수 숫자 하나를 전달받기
+        // 전달받은 숫자가 짝수라면
+        // 콘솔창에 '{숫자}는 짝수입니다.'
+        // 전달받은 숫자가 홀수라면
+        // 콘솔창에 '{숫자}는 홀수입니다.'
+        // 출력하는 함수 선언하기
+
+        function evenOdd(num1){
+            if(num1 % 2 === 0){
+            console.log(`${num1}는 짝수입니다.`)
+            }
+            else{console.log(`${num1}는 홀수입니다.`)}
+        }
+        evenOdd(7)
+
+
+        // '숫자입력'이라는 질문을 가진 prompt창을 통해 숫자 입력받기
+        // 입력받은 숫자를 활용해서 함수 호출하기
+            let num1 = prompt('숫자입력')
+        evenOdd(num1)
+
+
+
+    </script>
+</body>
+</html>
